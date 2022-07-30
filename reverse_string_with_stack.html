@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reverse String With Stack</title>
+    <script>
+        let data = [];
+        let currentSize = data.length;
+        function push(newVal){
+            data[currentSize] = newVal;
+            currentSize+=1;
+        }
+        function pop(){
+            let lastRemovedItem = data[currentSize-1];
+            currentSize-=1;
+            data.length = currentSize;
+            return lastRemovedItem;
+        }
+
+        function reverseStr(item){
+            for(let i=0;i<item.length;i++){
+                push(item[i]);
+            }
+            for(let i=0;i<item.length;i++){
+                item[i]=pop(); // yha ham call by reference ka use karenge
+            }
+        }
+
+        let str = "hansraj";
+        str = str.split("");
+        console.log(str); // (7) ['h', 'a', 'n', 's', 'r', 'a', 'j']
+        reverseStr(str);
+        console.log(str); // (7) ['j', 'a', 'r', 's', 'n', 'a', 'h']
+        console.log(str.join("")); // jarsnah
+
+        
+
+
+
+// Example of call by reference 
+        // function test(a){
+        //     a[0] = 300;
+        // }
+        // a = [20];
+        // test(a);
+        // console.log(a);  // [300]
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

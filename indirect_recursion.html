@@ -1,0 +1,64 @@
+<!-- Indirect Recursion - do function hote hai jinhe ham ek dusre se call kar dete hai loop ke andar jo ek indirect recursion hota hai or vo rukta hai jab koi condition match ho jati hai     
+    function apple(){
+        banana();
+    }
+    function banana(){
+        apple();
+    }
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Indirect Recursion.</title>
+    <script>
+        let money = 100;
+        let totalApple = 0;
+        
+        // Using Indirect recurtion
+        function buyApple(x){
+            // console.log(x);
+            if(x>0){
+                console.log("I have",totalApple,"Appple",x,"rs. remaining");
+                buyMore(x);
+            } else {
+                console.log("I don't have more money", totalApple);
+            }
+        }
+
+        function buyMore(x){
+            totalApple++;
+            buyApple(x-20);
+            // console.log("buy more", x);
+        }
+        buyApple(money);
+
+        // Using Direct Recursion
+        // function buyApple(x){
+        //     if(x>0){
+        //         console.log("I have",totalApple,"Appple",x,"rs. remaining");
+        //         totalApple++;
+        //         buyApple(x-10);
+        //     } else {
+        //         console.log("I don't have more money", totalApple);
+        //     }
+        // }
+        // buyApple(money);
+
+        // Logical Question 
+        function test(x){
+            console.log(x); // 5 4 3 2 1 0
+            if(x>0){
+                test(x-1);
+            }
+            console.log(x); // 0 1 2 3 4 5
+        }
+        let data = 5;
+        test(data)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

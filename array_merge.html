@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Merge two Array</title>
+    <script>
+        let data = [3,45,6,6,7,8,8];
+        let data2 = [34,5,45,65,5];
+        let data3 = [];
+        for(i = 0;i<data.length;i++){
+            data3[i] = data[i];
+        }
+        for(i = 0;i<data2.length;i++){
+            // console.log(data.length+i);
+            data3[data.length+i] = data2[i]
+        }
+        console.log(data3); // (12) [3, 45, 6, 6, 7, 8, 8, 34, 5, 45, 65, 5]
+
+        // using spread operator to merge two array
+        // let arr1 = [3,45,6,6,7,8,8];
+        // let arr2 = [34,5,45,65,5];
+        // let arr3 = [...arr1,...arr2];
+        // console.log(arr3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

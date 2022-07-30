@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stack With JavaScript</title>
+    <script>
+        let stack = [];
+        let max = 5;
+        let currentSize = stack.length;
+        function push(){
+            let newval = document.getElementById('input').value;
+            newval = parseInt(newval);
+
+            if(currentSize>=max){
+                alert("stack is full you can't add "+newval)
+            }else{
+                stack[currentSize] = newval;
+                currentSize+=1;
+                document.getElementById('input').value="";
+                console.log("element added in stack");
+            }
+        }
+
+        function pop(){
+            if(currentSize>0){
+                currentSize-=1;
+                stack.length = currentSize;
+                // console.log(stack);
+            }else{
+                alert("stack is already empty");
+            }
+        }
+
+        function display(){
+            for(let i=0;i<=currentSize-1;i++){
+                console.log("el. no", i ,"and value is", data[i]);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="push()">Add element to Stack</button>
+    <button onclick="pop()">Remove element to Stack</button>
+    <button onclick="display()">Display All elements of Stack</button>
+</body>
+</html>
