@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Javascript Star Patterns</title>
+</head>
+<body>
+    <h1>Javascript Star Pattern</h1>
+    <!-- <script>
+        let n = 5;
+        let string = "";
+        for(let i=0; i<=n; i++){
+            // printing spaces
+            for(let j = 0;j<=n-i;j++){
+                string += " ";
+            }
+            // printing star
+            for(let k=0;k<i;k++){
+                string += "*";
+            }
+            string += "\n";
+        }
+        console.log(string);
+        // output- 
+                                    
+                //      *
+                //     **
+                //    ***
+                //   ****
+                //  *****
+    </script> -->
+
+
+    <!-- <script>
+        let n = 5;
+        let string = "";
+        for(let i=0; i<=n; i++){
+            // printing spaces
+            for(let j = 0;j<=n;j++){
+                string += " ";
+            }
+            // printing star
+            for(let k=0;k<i;k++){
+                string += "*";
+            }
+            string += "\n";
+        }
+        console.log(string);
+        // output- 
+                                    
+                //   *
+                //   **
+                //   ***
+                //   ****
+                //   *****
+    </script> -->
+
+
+    <script>
+        let n = 5;
+        let string = "";
+        for(let row=0; row<n; row++){
+            // Printing space
+            // string += "";
+            for(let col = 0; col<=row; col++){
+                string += "*"
+            }
+            string += "\n";
+        }
+        console.log(string);
+        // output-  
+                                    
+                //   *****
+                //   *****
+                //   *****
+                //   *****
+                //   *****
+    </script>
+
+
+    <!-- <script>
+        let n = 5;
+        let string = "";
+        let i = 1;
+        while(i<=n){
+            let j = 1;
+        //  Printing space    
+        //  string += " "
+            while(j<=n){
+                string += "*"
+                j=j+1;
+            }
+            string += "\n";
+            i=i+1;
+        }
+        console.log(string);
+        // output- 
+        //         *****
+        //         *****
+        //         *****
+        //         *****
+        //         *****  
+    </script> -->
+
+<!-- 
+    <script>
+        let n = 5;
+        let string = "";
+        let i = 1;
+        while(i<=n){
+            let j = 1;
+        //  Printing space    
+        //  string += " "
+            while(j<=i){
+                string += "*"
+                j=j+1;
+            }
+            string += "\n";
+            i=i+1;
+        }
+        console.log(string);
+        // output- 
+        //         *
+        //         **
+        //         ***
+        //         ****
+        //         *****  
+    </script> -->
+</body>
+</html>

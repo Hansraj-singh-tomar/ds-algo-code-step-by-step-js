@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Queue With JS</title>
+    <script>
+        let queue = [];
+        let currentSize = queue.length;
+        let maxSize = 3;
+        
+        function enqueue(newVal){
+            if(currentSize>=maxSize){
+                alert("Queue is already full")
+            }else{
+                queue[currentSize] = newVal;
+                currentSize++;
+            }
+        }
+
+        function display(){
+            console.log(queue);
+        }
+
+        function dequeue(){
+            if(currentSize>0){
+                for(let i=0; i<queue.length; i++) {
+                    queue[i] = queue[i+1]
+                    console.log(queue[i]);  
+                }
+                currentSize--;  // ye two lines, elem delete hone ke baad uss jagah par array me jo undefined aata hai usse hatane ke liye use karte hai 
+                queue.length = currentSize;
+            }else{
+                alert("Queue is already empty");
+            }
+        }
+        enqueue(10);
+        enqueue(20);
+        enqueue(30);
+        display();
+    </script>
+</head>
+<body>
+      <h1>Queue in JS.</h1> 
+</body>
+</html>
+
+<!-- // FIFO(first in first out) concept ko follow karta hai 
+// Queue is an linear data structure
+// element add Front se hoga and remove Rear(end) se hoga
+
+// understand enqueue and dequeue operations.
+// enqueue - add item in queue
+// dequeue - remove item from queue
+
+// implement enqueue and dequeue functions for operations.
+// Test Queue operations with console  -->
