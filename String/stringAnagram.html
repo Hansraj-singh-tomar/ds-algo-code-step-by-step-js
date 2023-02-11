@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check strings are Anagram</title>
+</head>
+<body>
+    <h1>Check strings are Anagram</h1>
+    <!-- <script>
+        function checkAnagram(str1,str2){
+            let objStr1 = {};
+            if(str1.length !== str2.length){
+                return false;
+            }
+
+            for (ch of str1) {
+                // console.warn(ch);  // "h" "e" "l" "o"
+                objStr1[ch] = (objStr1[ch] || 0) + 1 // objStr1[ch] = undefined hai ya fir iski value zero hai tab plus one kar kar do iski value
+                
+                // if(objStr1[ch]){
+                //     objStr1[ch]++
+                // }else{
+                //     objStr1[ch]=1
+                // }
+            }
+            // console.log(objStr1); // {h: 1, e: 1, l: 2, o: 1}
+            
+            for(ch of str2) {
+                // console.log(ch); // "e" "l" "o" "h"
+                // console.log(objStr1[ch]); // 1 2 1
+                if(!objStr1[ch]){
+                    return false;
+                }
+                objStr1[ch]--;
+            } 
+            return true;
+        }
+        console.log(checkAnagram("hello", "elloh"));
+    </script> -->
+
+        <script>
+            function strAnagram(str1, str2){
+                let objStr = {};
+
+                if(str1.length !== str2.length){
+                    return false;
+                }
+                for(ch of str1) {
+                    
+                    // First way
+                    // if(!objStr[ch]){  // agar character already exist karta hai object me tab uss char ki value ko increase kar do 
+                    //     objStr[ch] = 0;
+                    // }
+                    // objStr[ch]++;
+
+                    // Second way
+                    if(objStr[ch]){  // agar character already exist karta hai object me tab uss char ki value ko increase kar do 
+                        objStr[ch]++;
+                    } else {
+                        objStr[ch] = 1;
+                    }
+                    
+                }
+                console.log(objStr);
+                for( ch of str2) {
+                    if(!objStr[ch]){
+                        return false
+                    } else {
+                        objStr[ch]--;
+                    }
+                }
+                return true;
+            }
+            console.log(strAnagram("hello", "lleho"));
+        </script>
+
+</body>
+</html>

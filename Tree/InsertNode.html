@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Tree using JS. </title>
+</head>
+<body>
+    <h1>Binary Search Tree using JS.</h1>
+    <script>
+        class Node {
+            constructor(val) {
+                this.value = val;
+                this.left = null;
+                this.right = null;
+            }
+        }
+        class BSTree {
+            constructor() {
+                this.root = null;
+            }
+
+            isTreeEmpty() {
+                return this.root === null;
+            }
+
+            makeTree(val) {
+                let newNode = new Node(val);
+                if(this.root === null){
+                    this.root = newNode;
+                } else {
+                    this.insertNode(this.root, newNode)
+                }
+            }
+
+            insertNode(root, newNode) {
+                if(root.value > newNode.value){
+                    if(root.left === null){
+                        root.left = newNode;
+                    } else {
+                        this.insertNode(root.left, newNode)
+                    }
+                } else {
+                    if(root.right === null){
+                        root.right = newNode;
+                    } else {
+                        this.insertNode(root.right, newNode)
+                    }
+                }
+            }
+        }
+
+        let bst = new BSTree();
+        // console.log(bst.isTreeEmpty()); // true
+        bst.makeTree(20);
+        // console.log(bst.isTreeEmpty()); // false
+        // console.log(bst);  // root: Node {value: 20, left: null, right: null}
+        bst.makeTree(10);
+        bst.makeTree(5);
+        console.log(bst);
+        bst.makeTree(30);
+        bst.makeTree(23);
+        console.log(bst);  // root: Node {value: 20, left: Node, right: Node}  // left: Node {value: 10, left: Node, right: null}  // right: Node {value: 30, left: Node, right: null}
+    </script>
+</body>
+</html>

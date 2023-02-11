@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Recursive Approach for Binary Search in DS/ALGO in javascript</title>
+   <script>
+    const data = [10,23,43,56,65,65];
+    let start = 0;
+    let end = data.length-1;
+    let position = undefined;
+    let find = 65;
+    
+    function recBinarySearch(data, start, end){
+        let mid = Math.floor((start+end)/2);
+        if(data[mid] === find){
+            position = mid;
+            return true; 
+        }else if(data[mid]<find){
+            start = mid+1;
+            recBinarySearch(data,start,end);
+        }else {
+            end = mid-1;
+            recBinarySearch(data,start,end);
+        }
+    }   
+    recBinarySearch(data,start,end);
+    console.log(position);
+    
+</script>
+</head>
+<body>
+    <h1>Recursive Approach for Binary Search in DS/ALGO in javascript</h1>
+    
+    
+</body>
+</html>

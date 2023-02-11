@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Selection Sort</title>
+    <script>
+        let items = [23,1,43,54];
+
+        // In Ascending Order 
+        function selectionSort(data){
+            let minId;
+            for(i=0;i<data.length;i++){
+                minId = i;
+                for(j=i+1; j<data.length; j++){
+                    if(data[j] < data[minId]){
+                        minId = j;
+                    }
+                }
+                let temp = data[minId];
+                data[minId] = data[i];
+                data[i] = temp; 
+            }
+        }
+        selectionSort(items);
+        console.log(items);
+
+        // In Descending Order
+        // function selectionSort(data){
+        //     let maxId;
+        //     for(i=0;i<data.length;i++){
+        //         maxId = i;
+        //         for(let j=i+1;j<data.length;j++){
+        //             if(data[j]>data[maxId]){
+        //                 maxId = j;
+        //             }
+        //         }
+        //         let temp = data[maxId];
+        //         data[maxId] = data[i];
+        //         data[i] = temp;
+        //     }
+        // } 
+        // selectionSort(items);
+        // console.log(items);
+    </script>
+</head>
+<body>
+          
+</body>
+</html>

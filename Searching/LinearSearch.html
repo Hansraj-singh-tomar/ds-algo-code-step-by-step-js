@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Linear Search in JavaScript</title>
+    <script>
+        function searchEl() {
+            let data = [12,54,65,76,86,23,34];
+            let find = document.getElementById("el").value;
+            let pos = undefined; 
+            for(let i=0;i<=data.length;i++){
+                if(data[i] == find) {
+                    pos = i;
+                    break;
+                }
+            }
+            console.log(pos);
+            if(!pos){
+                alert("element not found");
+            }else{
+                alert("Element Position is"+pos);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Linear Search in JavaScript.</h1> 
+    <input type="text" id="el" placeholder="Enter Element"/>
+    <button onClick="searchEl()">Search Element</button>
+    
+</body>
+</html>
+

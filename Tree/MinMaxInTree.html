@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Tree using JS. </title>
+</head>
+<body>
+    <h1>Binary Search Tree using JS.</h1>
+    <script>
+        class Node {
+            constructor(val) {
+                this.value = val;
+                this.left = null;
+                this.right = null;
+            }
+        }
+        class BSTree {
+            constructor() {
+                this.root = null;
+            }
+
+            isTreeEmpty() {
+                return this.root === null;
+            }
+
+            makeTree(val) {
+                let newNode = new Node(val);
+                if(this.root === null){
+                    this.root = newNode;
+                } else {
+                    this.insertNode(this.root, newNode)
+                }
+            }
+
+            insertNode(root, newNode) {
+                if(root.value > newNode.value){
+                    if(root.left === null){
+                        root.left = newNode;
+                    } else {
+                        this.insertNode(root.left, newNode)
+                    }
+                } else {
+                    if(root.right === null){
+                        root.right = newNode;
+                    } else {
+                        this.insertNode(root.right, newNode)
+                    }
+                }
+            }
+
+            minVal(root){
+                if(root){
+                    // if(!root.left){
+                    if(root.left === null){
+                        // return root.value;
+                        console.log(root.value);
+                    }else{
+                        this.minVal(root.left);
+                    }
+                }
+            }
+
+
+            maxVal(root){
+                if(root){
+                    // if(!root.right){
+                    if(root.right === null){
+                        console.log(root.value);
+                    }else{
+                        this.maxVal(root.right);
+                    }
+                }
+            }
+
+            
+        }
+
+        let bst = new BSTree();
+        bst.makeTree(20);
+        bst.makeTree(10);
+        bst.makeTree(5);
+        bst.makeTree(30);
+        bst.makeTree(23);
+        bst.minVal(bst.root); // 5
+        bst.maxVal(bst.root); // 30
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List By Code Step By Step</title>
+</head>
+<body>
+    <h1>Linked List By Code Step By Step</h1>
+    <script>
+        class List {
+            constructor(data) {
+                this.head = {
+                    value: data,
+                    next: null
+                }
+                this.tail = this.head;
+                this.size = 1;
+            }
+
+            append(nodeData){
+                let newNode = {
+                    value: nodeData,
+                    next: null
+                }
+                this.tail.next = newNode;
+                this.tail = newNode;
+                this.size++;
+            }
+
+            prepand(nodeData){
+                let newNode = {
+                    value: nodeData,
+                    next: null,
+                }
+                newNode.next = this.head;
+                this.head = newNode;
+                this.size++;
+            }
+
+            deleteNode(index){
+                let counter = 1;
+                let leadNode = this.head;
+                if(counter === index){
+                    this.head = this.head.next;
+                } else {
+                    while(counter < index-1){
+                        leadNode = leadNode.next;
+                        counter++;
+                    }
+                    let temp = leadNode.next.next;
+                    leadNode.next = temp;
+                    this.size--; // so from the list the node of 300 has removed
+                }
+            }
+
+            traverse(){
+                let counter = 0;
+                let currentNode = this.head;
+                while(counter < this.size) {
+                    console.log(currentNode);
+                    currentNode = currentNode.next;
+                    counter++;
+                }   
+            }
+
+            insert(index, nodeData){
+                let newNode = {
+                    value: nodeData,
+                    next: null
+                }
+                let counter = 1;
+                let leadNode = this.head;
+                while(counter < index-1){
+                    leadNode = leadNode.next;
+                    counter++;
+                }
+                let nextNode = leadNode.next;
+                leadNode.next = newNode;
+                newNode.next = nextNode;
+                this.size++; 
+            }
+
+            search(data){
+                let currentNode = this.head;
+                let loop = true;
+                while (loop) {
+                    if(currentNode.value == data){
+                        console.log(currentNode);
+                        loop = false;
+                    } else if(currentNode.value == null) {
+                        console.log("undefined");
+                        loop = false;
+                    } else {
+                        currentNode = currentNode.next;
+                    }
+                }
+            }
+
+            reverse(){
+                let first = this.head;
+                let second = first.next;
+                this.tail = this.head;
+
+                while(second){
+                    let temp = second.next;
+                    second.next = first;
+                    first = second;
+                    second = temp;
+                }
+                this.head = first;
+                this.tail.next = null;
+
+            }
+
+        }
+
+        let list = new List(100);
+        list.append(200);
+        list.append(300);
+        list.append(400);
+        list.append(500);
+        // list.prepand(50);
+        // list.deleteNode(3);
+        // list.traverse();
+        // list.insert(3,30000);
+        // list.search(300);
+        list.reverse();
+        console.log(list);
+    </script>
+</body>
+</html>

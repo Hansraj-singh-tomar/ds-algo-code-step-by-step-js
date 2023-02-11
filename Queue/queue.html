@@ -23,7 +23,7 @@
         function dequeue(){
             if(currentSize>0){
                 for(let i=0; i<queue.length; i++) {
-                    queue[i] = queue[i+1]
+                    queue[i] = queue[i+1]  // [10,11,12,13]
                     console.log(queue[i]);  
                 }
                 currentSize--;  // ye two lines, elem delete hone ke baad uss jagah par array me jo undefined aata hai usse hatane ke liye use karte hai 
