@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complete Tree</title>
+</head>
+<body>
+    <script>
+         // isTreeEmpty
+        // makeTree
+        // insertNode 
+        // deleteNode
+        // BFS
+        // DFS - preorder, inorder, postorder
+        // MinMaxNode 
+        // search Node 
+
+        class Node {
+            constructor(data){
+                this.value = data;
+                this.left = null;
+                this.right = null;
+            }
+        }
+
+        class BSTree {
+            constructor(){
+                this.root = null;
+            }
+
+            isTreeEmpty(){
+                if(!this.root){
+                    return true;
+                }
+                // return this.root === null;
+                // return !this.root;
+            }
+
+            makeTree(nodeData){
+                let newNode = new Node(nodeData);
+                if(this.root === null){
+                    this.root = newNode;
+                } else {
+                    this.insertNode(this.root, newNode)
+                }
+            }
+
+            insertNode(root, newNode){
+                if(newNode.value < root.value){
+                    if(root.left === null){
+                        root.left = newNode;
+                    }else{
+                        this.insertNode(root.left, newNode)
+                    }
+                } else {
+                    if(root.right === null){
+                        root.right = newNode;
+                    }else{
+                        this.insertNode(root.right, newNode)
+                    }
+                }
+            }
+
+            minVal(root){
+                if(root.left === null){
+                    console.log(root.value);
+                }else{
+                    this.minVal(root.left);
+                }
+            }
+
+            maxVal(root){
+                if(root.right === null){
+                    console.log(root.value);
+                }else{
+                    this.maxVal(root.right);
+                }
+            }
+
+            searchNode(data, root){
+                if(root === null){
+                    return ;
+                } else if(root.value === data){
+                    // console.log(root);
+                    return true;
+                } else if(data < root.value){
+                    return this.searchNode(data, root.left)
+                }else {
+                    return this.searchNode(data, root.right)
+                } 
+            }
+
+            preOrder(root){
+                if(root){
+                    console.log('preOrder',root.value)
+                    this.preOrder(root.left)
+                    this.preOrder(root.right)
+                }
+            }
+            postOrder(root){
+                if(root){
+                    this.postOrder(root.left)
+                    this.postOrder(root.right)
+                    console.log("post order",root.value)
+                }
+            }
+            inOrder(root){
+                if(root){
+                    this.inOrder(root.left)
+                    console.log('in order',root.value)
+                    this.inOrder(root.right)
+                }
+            }
+
+            BFS(){
+                let queue = [];
+                queue.push(this.root)
+                while(queue.length){
+                    let current = queue.shift();
+                    if(current.left){
+                        queue.push(current.left);
+                    }
+                    if(current.right){
+                        queue.push(current.right)
+                    }
+                    console.log(current.value);
+                }
+            }
+
+        }
+
+        let bst = new BSTree();
+        // console.log(bst.isTreeEmpty()); // true
+        bst.makeTree(20);
+        bst.makeTree(10);
+        bst.makeTree(5);
+        bst.makeTree(15);
+        bst.makeTree(30);
+        bst.makeTree(25);
+        bst.makeTree(35);
+        // bst.minVal(bst.root);
+        // bst.maxVal(bst.root);
+        // console.log(bst.searchNode(5, bst.root));
+        bst.preOrder(bst.root);
+        bst.inOrder(bst.root);
+        bst.postOrder(bst.root);
+        bst.BFS();
+        // console.log(bst);
+
+    </script>
+</body>
+</html>

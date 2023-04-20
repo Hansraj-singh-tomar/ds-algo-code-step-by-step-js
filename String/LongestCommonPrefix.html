@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // First Method
+        // function longestCommonPrefix(strs) {
+        //         if (!strs || strs.length === 0) {
+        //             return ''; // empty input array returns empty string
+        //         }
+        //         let prefix = strs[0]; // start with first string as prefix
+        //         console.log(prefix); // flower
+        //         console.log(typeof prefix); // string
+        //         console.log("flower".indexOf(prefix)); // 0 
+        //         for (let i = 1; i < strs.length; i++) {
+        //             while (strs[i].indexOf(prefix) !== 0) {
+        //                 prefix = prefix.substring(0, prefix.length - 1); // reduce prefix until it matches the current string
+        //                 if (prefix === '') {
+        //                     return ''; // no common prefix found
+        //                 }
+        //             }
+        //         }
+        //         return prefix;
+        // }
+
+        // console.log(longestCommonPrefix(['flower', 'flow', 'flight'])); // output: 'fl'
+        // // console.log(longestCommonPrefix(['dog', 'racecar', 'car'])); // output: ''
+        // // console.log(longestCommonPrefix(['', ''])); // output: ''
+
+
+        // Second Method
+        function longestCommonPrefix(arr){
+            if(arr.length === 0){
+                return "";
+            }
+            for(let i = 0; i < arr[0].length; i++){
+                for(let j = 1; j < arr.length; j++){
+                    if(arr[0][i] !== arr[j][i]){
+                        return arr[0].slice(0, i);
+                    }
+                }
+            }
+        }
+        console.log(longestCommonPrefix(["flower", "flow", "floight"]));
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move All Zero to end of the array.</title>
+</head>
+<body>
+    <h1>Move All Zero to end of the array.</h1>
+    <script>
+        let array = [0,2,0,4,5,0,5,4];
+
+        function moveZeroToEnd(arr){
+            let i = 0;
+            let j = 0;
+
+            while(i < arr.length){
+                if(arr[i] !== 0){
+                    [arr[i], arr[j]] = [arr[j],arr[i]]
+                    j++;
+                }
+                i++;
+            }
+            return arr;
+        }
+
+       console.log(moveZeroToEnd(array)); // (8) [2, 4, 5, 5, 4, 0, 0, 0]
+    </script>
+</body>
+</html>

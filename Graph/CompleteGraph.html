@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Graph</title>
+</head>
+<body>
+    <h1>Complete Graph</h1>
+
+    <script>
+
+        // Adjacency Matrix In Graph
+        let data = [
+            [0,1,1,0],
+            [1,0,1,1],
+            [1,1,0,0],
+            [0,1,0,0],
+        ]
+        console.log(data); //  (4) [Array(4), Array(4), Array(4), Array(4)]
+        console.log(data[2][1]); // 1
+
+        // Adjacency List in Graph
+        let adjacecyList = {
+            'A': ['B','C'],
+            'B': ['A','C','D'],
+            'C': ['A','B'],
+            'D': ['B'] 
+        }
+        console.log(adjacecyList); // {A: Array(2), B: Array(3), C: Array(2), D: Array(1)}
+        console.log(adjacecyList.A); // ['B', 'C']
+
+        class Graph{
+            constructor() {
+                this.data = {};
+            }
+
+            addVertext(vertex){
+                if(!this.data[vertex]){
+                    this.data[vertex] = [];
+                }
+            }
+
+            addEdges(v1,v2){
+                if(!this.data[v1]){
+                    this.addVertext(v1)
+                }
+                if(!this.data[v1]){
+                    this.addVertext(v2)
+                }
+                this.data[v1].push(v2);
+                this.data[v2].push(v1);
+            }
+
+            removeEdge(v1,v2){
+                // console.log("remove Edges", this.data[v1]); // remove Edges (2) ['B', 'C']
+                // console.log("remove Edges", this.data[v2]); // remove Edges (2) ['A', 'C','D']
+                this.data[v1] = this.data[v1].filter((item) => item != v2);
+                this.data[v2] = this.data[v2].filter((item) => item != v1);
+            }
+
+            removeVertex(vertex){
+                if(!this.data[vertex]){
+                    return ;
+                }
+                for(let item of this.data[vertex]){
+                    console.log(item); // B and C 
+                    this.removeEdge(vertex,item);
+                }
+                delete this.data[vertex];
+            }
+        }
+
+        const graph = new Graph();
+        // console.log(graph); // Graph {data: { }}
+        graph.addVertext("A");
+        graph.addVertext("B");
+        graph.addVertext("C");
+        graph.addVertext("D");
+        console.log(graph.data); // {A: [], B: [], C: [], D: []}
+
+        graph.addEdges("A","B");
+        graph.addEdges("A","C");
+        graph.addEdges("B","C");
+        graph.addEdges("B","D");
+        console.log(graph.data);  // // {A: ['C','B'], B: ['A','C','D'], C: ['A','B'], D: ['B']}
+    
+        // graph.removeEdge("A","B");
+        // console.log(graph.data);  // // { A: ['C'], B: ['C','D'], C: ['A','B'], D: ['B'] }
+
+        graph.removeVertex("A");
+        console.log(graph.data);  // { B:['C','D'], C:['B'], D:['B'] }
+    </script>
+
+</body>
+</html>

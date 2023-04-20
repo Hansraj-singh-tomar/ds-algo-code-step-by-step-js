@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equilibrium Point In Given Array</title>
+</head>
+<body>
+    <h1>Equilibrium Point In Given Array</h1>
+    <!-- 
+        Q. what is Equilibrium Point -
+        let arr = [1,2,6,4,0,-1]
+        so the Eq. point is 6 because sum of right side of 6 is 3 and sum of left side is also 3 so 6 is equ. point
+     -->
+    <script>
+
+        // First Method
+        // function findEquilibriumPoint(arr) {
+        //     let total = arr.reduce((acc, curr) => acc + curr, 0);
+        //     let leftSum = 0;
+        //     for (let i = 0; i < arr.length; i++) {
+        //         total -= arr[i];
+        //         if (leftSum === total) {
+        //             // return i;
+        //             return arr[i];
+        //         }
+        //         leftSum += arr[i];
+        //     }
+        //     return -1;
+        // }
+        // console.log(findEquilibriumPoint([1,2,6,4,0,-1]))
+
+        // Second Method
+        // function findEquilibriumPoint(arr){
+        //     for(let i = 0; i < arr.length; i++){
+        //         let leftSum = 0;
+        //         let rightSum = 0;
+        //         for(let j = 0; j < i; j++){
+        //             leftSum += arr[j];
+        //         }
+        //         for(let j = i + 1; j < arr.length; j++){
+        //             rightSum += arr[j];
+        //         }
+        //         if(leftSum === rightSum){
+        //             return i; // 2
+        //             // return arr[i]; // 6
+        //         }
+        //     }
+        //     return -1;
+        // }
+        // console.log(findEquilibriumPoint([1,2,6,4,0,-1]));
+
+    </script>
+</body>
+</html>

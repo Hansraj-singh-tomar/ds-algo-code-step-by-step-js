@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Roman Number To Integer Number</title>
+</head>
+<body>
+    <h1>Change Roman Number To Integer Number</h1>
+    <script>    
+        function romanToInt(s) {
+                const romanToIntMap = {
+                    'I': 1,
+                    'V': 5,
+                    'X': 10,
+                    'L': 50,
+                    'C': 100,
+                    'D': 500,
+                    'M': 1000
+                };
+                let result = 0;
+                // const current = romanToIntMap[s[0]]; // romanToIntMap[s['V']] = 5
+                // console.log(current); // 5 
+                for (let i = 0; i < s.length; i++) {
+                    const current = romanToIntMap[s[i]]; // romanToIntMap[s['V']]
+                    // console.log(current); // 5 
+                    const next = romanToIntMap[s[i + 1]];
+                    // console.log(next); // 1
+                    if (next && current < next) {
+                    // if (current < next) {
+                        // result += next - current;
+                        result -= current; // subtract current value if it's followed by a larger value
+                        // i++;
+                    } else {
+                        // result += current - next; // add current value otherwise
+                        result += current; // add current value otherwise
+                    }
+                }
+                return result;
+        }
+        // romanToInt("VI");
+        console.log(romanToInt("VI"));  // 6
+        // console.log(romanToInt("V"));  // 5
+
+        // let name = "hansraj"
+        // console.log(name.split('')); // (7) ['h', 'a', 'n', 's', 'r', 'a', 'j']
+        // console.log(typeof name);  // string
+        // console.log(name[0]); // h
+
+
+        // let next = 1;
+        // let current = 5;
+        // if(next && current < 2){
+        //     console.log("true")
+        // }else{
+        //     console.log("false"); // false 
+        // }
+    </script>
+</body>
+</html>

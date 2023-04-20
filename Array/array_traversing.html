@@ -4,12 +4,17 @@
     <title>Array Traversing</title>
     <script>
         let data = [23,3,43,54,64,32,2,34];
+        
+        // Traversing 
         // for(i=0;i<data.length;i++){
         //     document.write(`array ${i} is ${data[i]} <br>`)
         // }
 
+        // Accessing
         // let x = 5;
-        // document.write(data[x]); // 
+        // document.write(data[x]); // 32
+
+        // getting inputs from user 
         function getData(){
             let el = document.getElementById('element').value;
             if(el<data.length && typeof parseInt(el) === 'number' && el>0){

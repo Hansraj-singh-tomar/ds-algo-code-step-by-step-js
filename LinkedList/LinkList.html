@@ -9,6 +9,12 @@
 <body>
     <h1>Linked List By Code Step By Step</h1>
     <script>
+        // add node
+        // remove node 
+        // push node 
+        // pop node
+        // insert node at any specific node
+        // reverse list
         class List {
             constructor(data) {
                 this.head = {
@@ -37,6 +43,28 @@
                 newNode.next = this.head;
                 this.head = newNode;
                 this.size++;
+            }
+
+            pop() {
+                if (!this.head) {
+                    return undefined;
+                }
+
+                let current = this.head;
+                let previous = null;
+
+                while (current.next) {
+                    previous = current;
+                    current = current.next;
+                }
+
+                if (!previous) {
+                    this.head = null;
+                } else {
+                    previous.next = null;
+                }
+
+                return current.value;
             }
 
             deleteNode(index){

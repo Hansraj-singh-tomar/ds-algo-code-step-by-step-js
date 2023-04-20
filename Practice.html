@@ -1,144 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Practice file For DS Algo</title>
+    <title>Document</title>
 </head>
 <body>
-      <script>
-            class Node {
-                constructor(val){
-                    this.value = val;
-                    this.left = null;
-                    this.right = null;
-                }
+    <h1>Ds Algo</h1>
+    <script>    
+        // function fibonacci(n){
+        //     let result = [0,1];
+        //     for(let i = 2; i < n; i++){
+        //         result.push(result[i-2] + result[i-1]);
+        //     }
+        //     return result
+        // }
+
+        // const ans = fibonacci(10);
+        // console.log(ans);
+
+        // const fib = (n) => {
+        //     if(n <= 1) return n;
+
+        //     return fib(n-1) + fib(n-2);
+        // };
+        // console.log(fib(3));
+
+        // const num = 10;
+        // let x = 0;
+        // let y = 1;
+        // let fn = x + y;
+        // console.log(x);
+        // while(fn < num){
+        //     console.log(fn);
+        //     fn = x + y; 
+        //     x = y; 
+        //     y = fn; 
+        // }
+
+        class LRUCache {
+            constructor(capacity){
+                this.capacity = capacity;
+                this.cache = []
             }
 
-            class BSTree {
-                constructor(){
-                    this.root = null;
-                }
-
-                isTreeEmpty() {
-                    return this.root === null;
-                }
-
-                makeTree(val){
-                    let newNode = new Node(val);
-
-                    if(this.root === null){
-                        this.root = newNode;
-                    }else{
-                        this.insertNode(this.root,newNode);
-                    }
-                }
-
-                insertNode(root,newNode){
-                   if(newNode.value < root.value){
-                       if(root.left === null){
-                            root.left = newNode;
-                        } else {
-                            this.insertNode(root.left,newNode);
-                        }
-                   } else {
-                        if (root.right === null) {
-                            root.right = newNode;
-                        } else {
-                            this.insertNode(root.right, newNode);
-                        }
-                   }
-                }
-
-                searchNode(root,val){
-                    if(root === null){
-                        return false;
-                    }else if(root.value = val){
-                        return true;
-                    }else if(val < root.value){
-                        this.searchNode(this.left, val);
-                    }else {
-                        this.searchNode(root.right.val);
-                    }
-                }
-
-                preOrder(root){
-                    if(root){
-                        console.log(root.value);
-                        this.preOrder(root.left);
-                        this.preOrder(root.right);
-                    }
-                }
-                inOrder(root){
-                    if(root){
-                        this.preOrder(root.left);
-                        console.log(root.value);
-                        this.preOrder(root.right);
-                    }
-                }
-
-                postOrder(root){
-                    if(root){
-                        this.preOrder(root.left);
-                        this.preOrder(root.right);
-                        console.log(root.value);
-                    }
-                }
-
-                bfsTraversing(root){
-                    let queue = [];
-                    queue.push(this.root);
-                    while(queue.length){
-                        let current = queue.shift();
-                        if(current.left){
-                            queue.push(current.left);
-                        }
-                        if(current.right){
-                            queue.push(current.right);
-                        }
-                        console.log(current.value);
-                    }
-                }
-
-                minNode(root){
-                    if(root){
-                        if(root.left === null){
-                            console.log(root.value);
-                        }else{
-                            this.minNode(root.left)
-                        }
-                    }
-                }
-                maxNode(root){
-                    if(root){
-                        if(root.right === null){
-                            console.log(root.value);
-                        }else{
-                            this.maxNode(root.right)
-                        }
-                    }
-                }
+            isCacheFull(){    
+                return this.capacity === this.cache.length
             }
 
-            let bst = new BSTree();
-            console.log(bst);
-            bst.makeTree(20);
-            bst.makeTree(10);
-            bst.makeTree(30);
-            bst.makeTree(5);
-            bst.makeTree(15);
-            bst.makeTree(35);
-            bst.makeTree(25);
-            // console.log(bst.searchNode(bst.root,5));
-            // console.log(bst);
+            getItem(item){
+                return this.cache.indexOf(item)
+            }
 
-            // bst.preOrder(bst.root);
-            // bst.inOrder(bst.root);
-            // bst.postOrder(bst.root);
-
-            // bst.bfsTraversing(bst.root);
-
-            bst.minNode(bst.root); // 5 
-            bst.maxNode(bst.root); // 35
-
-      </script>
+            setItem(item){
+                let itemIndex = this.getItem(item)
+                if(itemIndex === -1){
+                    cache
+                }
+            }
+        }
+    </script>
 </body>
 </html>

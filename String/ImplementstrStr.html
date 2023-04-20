@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implement strStr()</title>
+</head>
+<body>
+    <h1>Implement strStr()- Find substring inside string</h1>
+    <script>
+        let haystack = "hello";
+        let needle = "ll";
+
+        // First Method
+        // function strStr(){
+        //     for(let i=0; i <= haystack.length; i++){
+        //         if(needle === haystack.substring(i, i+needle.length)) // 0,2 means 0,1 ke index ki value dekhega agar equal hai needle ke to hame true milega
+        //         {
+        //             // return i;
+        //             return needle.length;  
+        //         }
+        //     }
+        //     return -1
+        // }
+        // console.log(strStr());  // 2
+
+
+        // Second Method
+        function strStr(){
+            for(let i = 0; i<= haystack.length; i++){
+                let match = true;
+                for(let j = 0; j < needle.length; j++){
+                    if(haystack[i+j] !== needle[j]){
+                        match = false;
+                        break;
+                    }
+                }
+                if(match) return i;
+            }
+            return -1;
+        }
+        console.log(strStr());
+
+
+    </script>
+</body>
+</html>

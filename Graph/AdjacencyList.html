@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjacency List In Graph</title>
+</head>
+<body>
+    <!-- iske andar ham linkList ya map ya object ya array data structure bhi use kar sakte hai  -->
+    <!-- But ham object and Array ka use karenge -->
+    <h1>Adjacency List Graph</h1>
+    <script>
+        let adjList = {
+           'a' : ['b','c'],
+           'b' : ['a','c','d'],
+           'c' : ['a','b'],
+           'd' : ['b'] 
+        }
+        console.log(adjList);  // {a: Array(2), b: Array(3), c: Array(2), d: Array(1)}
+        console.log(adjList.a); // ['b','c']
+        console.log(adjList.b); // ['a','c','d']
+    </script>
+</body>
+</html>

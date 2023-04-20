@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRU Cache</title>
+</head>
+<body>
+    <!-- 
+        what is cache - cache is memory which is close to the CPU, which is smaller in size and it is very fast
+        what is LRU - least recently used cache and it uses the concept of temporal locality and in LRU we can keep recently accessed item 
+        in cache and remove the least recently accessed item.
+        
+        exp - chache size - 4
+        items - 10,20,10,30,40,50,30,40,60,30
+        expected cache behaviour -
+            [10]
+            [20,10]
+            [10,20]
+            [30,10,20]
+            [40,30,10,20]
+            [50,40,30,10]
+            [30,50,40,10]
+            [40,30,50,10]
+            [60,40,30,50]
+    -->
+    <h1>LRU Cache</h1>
+    
+    <script>
+        class LRUCache {
+            constructor(capacity){
+                this.capacity = capacity;
+                this.cache = [];
+            }
+
+            isCacheFull(){
+                return this.cache.length === this.capacity;
+            }
+
+            getItem(item){
+                return this.cache.indexOf(item); // if item is not exist in array then it will return us -1
+            }
+
+            setItem(item){
+                const itemIndex = this.getItem(item);
+                if(itemIndex === -1){
+                    if(this.isCacheFull()){
+                        this.cache.pop();
+                        this.cache.unshift(item);
+                    }else{
+                        this.cache.unshift(item);
+                    }
+                }
+                if(itemIndex !== -1){
+                    this.cache.splice(itemIndex, 1); // iss itemIndex se 1 element ko delete kar do
+                    this.cache.unshift(item);
+                }
+                console.log('cache', this.cache);
+            }
+        }
+
+        let cache = new LRUCache(4);
+        cache.setItem(10);
+        cache.setItem(20);
+        cache.setItem(10);
+        cache.setItem(30);
+        cache.setItem(40);
+        cache.setItem(50);
+        cache.setItem(30);
+        cache.setItem(40);
+        cache.setItem(60);
+        cache.setItem(30);
+        console.log(cache);
+    </script>
+</body>
+</html>

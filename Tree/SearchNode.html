@@ -61,6 +61,30 @@
                     return this.search(root.right, val);
                 }
             }
+
+            minNode(root){
+                if(root.left === null){
+                    return root.value;
+                }else{
+                    this.minNode(root.left);
+                }
+            }
+
+            maxNode(root){
+                if(root.right === null){
+                    return root.value;
+                }else{
+                    this.maxNode(root.right);
+                }
+            }
+
+            bfsTraversing(root){
+                let queue = [];
+                queue.push(root)
+                while(queue.length){
+                    let current = queue.shift();
+                }
+            }
         }
 
         let bst = new BSTree();
@@ -75,7 +99,9 @@
         bst.makeTree(23);
         // console.log(bst);  // root: Node {value: 20, left: Node, right: Node}  // left: Node {value: 10, left: Node, right: null}  // right: Node {value: 30, left: Node, right: null}
         console.log(bst.search(bst.root, 23));
-
+        bst.minNode(bst.root);
+        bst.maxNode(bst.root);
+        bst.bfsTraversing(bst.root);
     </script>
 </body>
 </html>

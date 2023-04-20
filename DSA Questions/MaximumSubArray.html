@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum SubArray</title>
+</head>
+<body>
+    <h1>Maximum SubArray</h1>
+    <script>
+        // let nums = [-2,1,-3,4,-1,2,1,-5,4]
+        let nums = [-2,1,-3,4]  // it's giving 4 as a answer
+        // output = 6 
+        // Explaination: [4,-1,2,1] has the largest sum = 6
+
+        // First Method 
+        var maxSubArray = function(nums) {
+            let maxSum = nums[0];
+            let currSum = nums[0];
+            
+            for (let i = 1; i < nums.length; i++) {
+                currSum = Math.max(nums[i], currSum + nums[i]);
+                maxSum = Math.max(maxSum, currSum);
+            }
+            
+            return maxSum;
+        };
+
+        console.log(maxSubArray(nums)); // 6
+
+        // Second Way - That's a better one
+        // let num = [-2,1,-1,4,1]
+        let num = [-2,1,-3,4]
+        function maxSubArr(num){
+            let sum = num[0]
+            for(let i=1; i<num.length; i++){
+                num[i] = Math.max(num[i], num[i]+num[i-1])
+                sum = Math.max(sum, num[i])
+            }
+            return sum
+        };
+        console.log(maxSubArr(num));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string of parentheses is valid</title>
+</head>
+<body>
+    <h1>string of parentheses is valid</h1>
+    <script>
+        function isValidParentheses(str) {
+            const stack = [];
+            const pairs = {
+                ')': '(',
+                '}': '{',
+                ']': '['
+            };
+            for (let i = 0; i < str.length; i++) {
+                const char = str[i];
+                // console.log(char);
+                if (char === '(' || char === '{' || char === '[') {
+                    stack.push(char);
+                } else if (char === ')' || char === '}' || char === ']') {
+                    const lastOpen = stack.pop();
+                    // console.log(lastOpen); // (
+                    // console.log(pairs[char]); // pair[')'] = '('
+                    if (lastOpen !== pairs[char]) { // here this is equal return true hone chahiye
+                        return false;
+                    }
+                }
+            }
+            return stack.length === 0;
+        }
+        console.log(isValidParentheses("(hansraj)"));  // true
+
+        // function isValidParentheses(str){
+        //     let stack = [];
+        //     for(let i = 0; i < str.length; i++){
+        //         let top = stack[stack.length - 1];
+        //         if(str[i]=='(' || str[i]=='{' || str[i]=='['){
+        //             stack.push(str[i])
+        //         }else if(str[i]==')' && top == '(' || str[i]=='}' && top == '{' || str[i]==']' && top == '['){
+        //             stack.pop();
+        //         }
+        //     }
+        //     if(stack.length == 0){
+        //        return true; 
+        //     }
+        //     if(stack.length != 0){
+        //         return false;
+        //     }
+        // }
+        // console.log(isValidParentheses("()")); // true
+        // console.log(isValidParentheses("(hansraj)")); // false
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Of Last Word</title>
+</head>
+<body>
+    <h1>Length of last word</h1>
+    <script>
+
+        // First Method
+        // function lastWord(s){
+        //     // return s.trim().split(" ").pop().length
+        //     return s.split(" ").pop().length
+        // }
+        // console.log(lastWord("hello word")); // 4
+
+        // Second Method
+        // trim remove the unwanted spaces from the starting and end position 
+        // let s = "hello word"; 
+        // console.log(s.length); // 10
+        // console.log(s.trim()); // hello word
+        // console.log(typeof s.trim()); // string
+        // console.log(s.trim().length); // 10
+        // console.log(lastWordIndex = s.lastIndexOf(' ')); // 5
+        // console.log( s.length - (lastWordIndex - 1)); // 6
+        // console.log( s.length - lastWordIndex - 1); // 4 that's write answer
+
+        // Third Method
+        // var lengthOfLastWord = function(s) {
+        //     let length = 0;
+        //     let end = s.length - 1;
+            
+        //     // skip any trailing white spaces 
+        //     // agar koi end me sapce hai to end ki value ko decrese kar dega jisse hame assani hogi actual length pta karne me 
+        //     while (end >= 0 && s[end] === ' ') {
+        //         end--;
+        //     }
+            
+        //     // count the length of the last word
+        //     while (end >= 0 && s[end] !== ' ') {
+        //         length++;
+        //         end--;
+        //     }
+        //     return length;
+        // };
+        // console.log(lengthOfLastWord("hello word")); // 4
+
+        // example
+        // let s = "hello word";
+        // let end = s.length-1;
+        // console.log(s[5] === ' '); // true // means that fifth position par space hai string ke bich
+    </script>
+</body>
+</html>
