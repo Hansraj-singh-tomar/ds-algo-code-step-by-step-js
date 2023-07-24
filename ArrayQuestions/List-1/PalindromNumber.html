@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrom Number</title>
+</head>
+<body>
+    <h1>Palindrom Number</h1>
+
+    <script>
+
+        // First Way to do it - changing number to string 
+        function isPalindrom(num){
+            if(num < 0){
+                return false;
+            }
+            const str = num.toString();
+            let left = 0;
+            let right = str.length - 1;
+            while(left < right){
+                if(str[left] !== str[right]){
+                    return false;
+                }
+                left++;
+                right--;
+            }
+            return true;
+        }
+        console.log(isPalindrom(1212)); // false 
+        console.log(isPalindrom(121)); // true 
+
+
+        // Second Way to do it 
+
+        // Trick 
+        // last value ko hatana hai tab 121/10 = 12.1 and isme Math.floor ka use kar lo 
+        // last digit ko get/prapt karna hai tab 121 % 10 karne par hame 1 milega 
+
+        // function palindromNumber(num){
+        //     let r;
+        //     let sum = 0;
+        //     let temp = num;
+        //     while(num > 0){
+        //         r = num % 10; // isse hame last digit milega 121%10 = 1
+        //         sum = (sum * 10)+r;
+        //         num = Math.floor(num / 10); 
+        //         num = parseInt(num / 10); 
+        //     }
+
+        //     if(temp == sum){
+        //         console.log("It's palindrom");
+        //     }else{
+        //         console.log("It's not palindrom");
+        //     }
+        // } 
+
+        // palindromNumber(121);
+        
+    </script>
+</body>
+</html>
+
+<!-- 
+// uses of destructuring 
+    // 1.    
+    //    const user = {
+    //     name: "hansraj",
+    //     address: {
+    //         street: 123
+    //     }
+    //    }
+
+    //    const {name, address:{street}} = user;
+    //    console.log(name, street); // hasnraj 123
+
+    // 2.
+    // due some reason user data is null then  it will give us error which must not be an error instead of error it should give us undefined undefined 
+    // for that what we will do is 
+       
+    //    const user = null;
+
+    //    const {name, address: {street}} = user;
+    //    console.log(name, street); // Uncaught TypeError: Cannot destructure property 'name' of 'user' as it is null
+        
+    // instead of this error we must get an undefined 
+    // how we fix this issue
+    //    const {name, address: {street}} = {...user};
+    //    console.log(name, street);  // Uncaught TypeError: Cannot read properties of undefined (reading 'street')
+    
+    // const {name, address} = {...user};
+    // const {street} = {...address};
+    // console.log(name, street); // undefined undefined -->

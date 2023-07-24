@@ -1,0 +1,19 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Prime Number.</h1>
+        <script>
+            function isPrime(number){
+                for(let i = 2; i < number; i++){
+                    if(number % i === 0){
+                        return "It's not a prime number"
+                        // console.log("It's not a prime number");
+                    }
+                }
+                return "It's a prime number"
+            }
+            console.log(isPrime(9))
+        </script>
+    </body>
+</html>

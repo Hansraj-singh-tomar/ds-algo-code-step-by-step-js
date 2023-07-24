@@ -1,0 +1,48 @@
+// Array Questions
+Here are 20 DSA (Data Structures and Algorithms) questions related to arrays that are relevant for React.js developers:
+
+1. How can you find the maximum and minimum values in an array?
+2. Explain the concept of a subarray and how you can find the maximum sum of a subarray.
+3. How can you rotate an array by a given number of positions?
+4. Explain the concept of a sliding window technique for arrays.
+5. How can you find the second largest and second smallest elements in an array?
+6. Explain the concept of a prefix sum array and its applications.
+7. How can you find the intersection of two arrays?
+8. How can you rearrange an array such that all even numbers appear before odd numbers?
+9. Explain the concept of a two-pointer approach for solving array problems.
+10. How can you find the majority element in an array?
+11. Explain the concept of a prefix product array and its applications.
+12. How can you find the Kth smallest element in an unsorted array?
+13. Explain the concept of a prefix XOR array and its applications.
+14. How can you find the sum of all subarrays of an array efficiently?
+15. Explain the concept of a prefix count array and its applications.
+16. How can you find the largest subarray with 0 sum?
+17. Explain the concept of a suffix sum array and its applications.
+18. How can you find the smallest missing positive number in an unsorted array?
+19. Explain the concept of a suffix product array and its applications.
+20. How can you find the maximum product subarray in an array?
+
+
+// String Questions
+Here are 20 DSA (Data Structures and Algorithms) questions related to strings that are relevant for React.js developers:
+
+1. How can you reverse a string in JavaScript?
+2. Explain the concept of an anagram and how you can check if two strings are anagrams.
+3. How can you check if a string is a palindrome?
+4. Explain the concept of string permutation and how you can generate all permutations of a string.
+5. How can you find the longest common prefix among a set of strings?
+6. Explain the concept of string matching algorithms like the Knuth-Morris-Pratt (KMP) algorithm or the Boyer-Moore algorithm.
+7. How can you check if a string contains a specific substring?
+8. Explain the concept of string compression and how you can compress a string.
+9. How can you count the number of occurrences of a specific character in a string?
+10. Explain the concept of string manipulation using regular expressions in JavaScript.
+11. How can you find the longest substring without repeating characters in a string?
+12. Explain the concept of string matching using finite automata, such as the Aho-Corasick algorithm.
+13. How can you find the longest palindrome substring in a string?
+14. Explain the concept of string manipulation using dynamic programming, such as the Longest Common Subsequence (LCS) algorithm.
+15. How can you count the number of words in a string?
+16. Explain the concept of string matching using trie data structure.
+17. How can you perform string reversal without using built-in string manipulation functions?
+18. Explain the concept of string compression using run-length encoding.
+19. How can you find the longest repeating substring in a string?
+20. Explain the concept of string matching using the Rabin-Karp algorithm.

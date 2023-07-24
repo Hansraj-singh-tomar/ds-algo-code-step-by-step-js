@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sieve Of Eratosthenes Algorithm</title>
+</head>
+<body>
+    <script>
+        // Prime Numbers are which are divisible by only itself and 1, are called prime number
+        // The Sieve of Eratosthenes is an algorithm for finding all prime numbers up to a given limit
+        // The prime numbers up to 20 are: 2, 3, 5, 7, 11, 13, 17, and 19.
+
+        // example of Array.fill() to better understanding
+        // let n = 5;
+        // const primes = new Array(n+1).fill(true);  // it will print six time true inside array 
+        // console.log(primes); // [true, true, true, true, true, true]
+        
+        // Example Math.sqrt(n)  // It will return the square root of given number
+        // let limit = Math.sqrt(20);
+        // console.log(limit); // 4.4721...  
+        
+
+        function getPrimesSieveOfEratosthenes(n){
+            const primes = new Array(n+1).fill(true);
+            primes[0] = false; // because 0 and 1 is not a prime number 
+            primes[1] = false;
+
+            const limit = Math.sqrt(n);
+            for(let i = 2; i <= limit; i++){ // here limit = 4.4721                if(primes[i]){
+                if(primes[i]){
+                    for(let j = i*i; j <= n; j += i){ // here n = 10
+                        // In first round - i*i = 2*2 = 4, then j = 4 + 2 = 6, then 6 <= 10 true
+                        primes[j] = false;
+                    } 
+                }    
+            }
+
+            const result = []; // result[false, false, true, true, false, true, false, true, false, false, false]
+            for(let i = 2; i <= n; i++){
+                if(primes[i]){
+                    result.push(i);
+                }
+            }
+
+            return result;
+        }
+    
+        console.log(getPrimesSieveOfEratosthenes(10)); // [2,3,5,7]
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    Methodology in Soft. Development
+    => The software dev. methodology is a process by which developers design, implement and test new 
+        computer software projects
+    Eg -> 
+        1. How to develop and test project 
+        2. how to release the project 
+        3. how to manage roadmap and prokect milestone
+ -->

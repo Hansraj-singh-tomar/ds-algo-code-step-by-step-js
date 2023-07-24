@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Element</title>
+</head>
+<body>
+    <script>
+        // Find a peak element which is not smaller than its neighbours
+        // Input: array= [5, 10, 20, 15]
+        // Output: 20
+
+        // First Way to do it
+        // function findPeak(arr, n){
+        //     // console.log(arr[n]); // undefined 
+        //     // console.log(arr[n-1]); // 15
+        //     // console.log(arr[n-2]); //20
+
+        //     if(n == 1) return 0; // here 0 is not false that's an a index number
+        //     if(arr[0] >= arr[1]) return 0;
+        //     if(arr[n-1] >= arr[n-2]) return n-1;
+
+        //     for(let i = 0; i < n; i++){
+        //         if(arr[i] > arr[i-1] && arr[i] > arr[i+1]){
+        //             return i;
+        //         }
+        //     }
+        // }
+
+        // let arr = [5,10,20,15]; 
+        // console.log(findPeak(arr, arr.length));  // 2
+        // time complexity is - o(n)
+
+
+        // second method 
+        // let arr = [5, 10, 20, 15]
+        // // console.log(arr.length);  // 4
+        // let n = arr.length; 
+
+        // function findPeak(arr, low, high, n){
+        //     let mid = (high + low) / 2;
+        //     // let mid = low + (high - low) / 2;
+        //     mid = Math.floor(mid)
+
+        //     if(mid == 0 || arr[mid-1] <= arr[mid] && mid == n-1 || arr[mid+1] <= arr[mid]){
+        //         return mid;
+        //     }else if(mid > 0 && arr[mid-1] > arr[mid]){
+        //         return findPeak(arr, low, (mid-1), n);
+        //     }else{
+        //         return findPeak(arr, (mid+1), high, n)
+        //     }
+        // }
+
+        // console.log(findPeak(arr, 0, n-1, n))
+        // // time complexity = o(log N)
+
+        // // Third way to do it
+        // function findPeak(arr, start, end){
+        //     while(start < end){
+        //         let mid = Math.floor((start+end)/2);
+        //         if(arr[mid] > arr[mid+1]){
+        //             end = mid;
+        //         }else{
+        //             start = mid + 1;
+        //         }
+        //     }
+        // } 
+
+        // let arr = [5, 10, 20, 15]
+        // let n = arr.length;
+        // console.log(findPeak(arr, 0, n-1));
+
+    
+    </script>
+</body>
+</html>

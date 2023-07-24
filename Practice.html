@@ -5,58 +5,28 @@
 </head>
 <body>
     <h1>Ds Algo</h1>
-    <script>    
-        // function fibonacci(n){
-        //     let result = [0,1];
-        //     for(let i = 2; i < n; i++){
-        //         result.push(result[i-2] + result[i-1]);
-        //     }
-        //     return result
-        // }
-
-        // const ans = fibonacci(10);
-        // console.log(ans);
-
-        // const fib = (n) => {
-        //     if(n <= 1) return n;
-
-        //     return fib(n-1) + fib(n-2);
-        // };
-        // console.log(fib(3));
-
-        // const num = 10;
-        // let x = 0;
-        // let y = 1;
-        // let fn = x + y;
-        // console.log(x);
-        // while(fn < num){
-        //     console.log(fn);
-        //     fn = x + y; 
-        //     x = y; 
-        //     y = fn; 
-        // }
-
-        class LRUCache {
-            constructor(capacity){
-                this.capacity = capacity;
-                this.cache = []
-            }
-
-            isCacheFull(){    
-                return this.capacity === this.cache.length
-            }
-
-            getItem(item){
-                return this.cache.indexOf(item)
-            }
-
-            setItem(item){
-                let itemIndex = this.getItem(item)
-                if(itemIndex === -1){
-                    cache
+    <script>
+        // 1^. palindrom number
+        // 2^. reverse number or string
+        // 3^. prime number 
+        // 4^. Bubble sort
+        // 5^. check strings are anagram 
+        // 6^. FibonacciSeries
+        // 7^. Two sum 
+        
+        // two sum 
+        let data = [7,2,11,3,18,4];
+        
+        for(let i = 0; i < data.length-1; i++){
+            for(let j = 0; j < data.length-1; j++){
+                if(data[j] > data[j+1]){
+                    let temp = data[j];
+                    data[j] = data[j+1];
+                    data[j+1] = temp;
                 }
             }
         }
+        console.log(data);
     </script>
 </body>
 </html>

@@ -18,6 +18,16 @@
             return temp;
         }
         console.log(reverse(str))
+
+        // second method using recursion 
+        function reverseString(str){
+            if(str === ""){
+                return "";
+            }else{
+                return reverseString(str.substr(1)) + str.charAt(0);
+            } 
+        }
+        console.log(reverseString("hello")); // olleh
     </script>
 </body>
 </html>

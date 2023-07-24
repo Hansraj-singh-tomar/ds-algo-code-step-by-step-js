@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move All Zero to end of the array.</title>
+</head>
+<body>
+    <h1>Move All Zero to end of the array.</h1>
+    <script>
+    // for move all zero toward right 
+    //     let array = [0,2,0,4,5,0,5,4];
+
+    //     function moveZeroToEnd(arr){
+    //         let i = 0;
+    //         let j = 0;
+
+    //         while(i < arr.length){
+    //             if(arr[i] !== 0){
+    //                 [arr[i], arr[j]] = [arr[j],arr[i]]
+    //                 j++;
+    //             }
+    //             i++;
+    //         }
+    //         return arr;
+    //     }
+
+    //    console.log(moveZeroToEnd(array)); // (8) [2, 4, 5, 5, 4, 0, 0, 0]
+    
+    
+    
+    // for move all zero toward left 
+    //     let array = [0,2,0,4,5,0,5,4];
+
+    //     function moveZeroToEnd(arr){
+    //         let i = 0;
+    //         let j = 0;
+
+    //         while(i < arr.length){
+    //             if(arr[i] === 0){
+    //                 [arr[i], arr[j]] = [arr[j],arr[i]]
+    //                 j++;
+    //             }
+    //             i++;
+    //         }
+    //         return arr;
+    //     }
+
+    //    console.log(moveZeroToEnd(array)); // (8) [0, 0, 0, 2, 4, 5, 5, 4]
+    
+    
+
+    // for move all negative numbers toward left 
+    //     let array = [ -1, 2, -3, 4, 5, 6, -7, 8, 9 ];
+
+    //     function moveNegativeAtBegining(arr){
+    //         let i = 0;
+    //         let j = 0;
+
+    //         while(i < arr.length){
+    //             if(arr[i] < 0){
+    //                 [arr[i], arr[j]] = [arr[j],arr[i]]
+    //                 j++;
+    //             }
+    //             i++;
+    //         }
+    //         return arr;
+    //     }
+
+    //    console.log(moveNegativeAtBegining(array)); // [-1, -3, -7, 4, 5, 6,  2,  8, 9] 
+    
+
+
+    // Using Dutch National Flag Algorithm - using it we are shifting negative element to left side
+    function reArrange(arr, n){
+        let low = 0, high = n - 1
+        while(low < high){
+            if(arr[low] < 0)
+                low += 1;
+            else if(arr[high] > 0)
+                high -= 1
+            else {
+                let temp = arr[low]
+                arr[low] = arr[high]
+                arr[high] = temp
+            }
+        }
+        return arr;
+    }
+
+    let arr = [1, 2,  -4, -5, 2, -7, 3, 2, -6, -8, -9, 3, 2,  1]
+    let n = arr.length;
+    console.log(reArrange(arr,n))
+    </script>
+</body>
+</html>
