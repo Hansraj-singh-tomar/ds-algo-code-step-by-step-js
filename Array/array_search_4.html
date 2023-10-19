@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Search Element from Array</title>
+    <script>
+      //    let data = [1,23,43,54,65,43];
+      //    let item = 54;
+      //    let index = undefined;
+
+      //    for(let i = 0;i<=data.length;i++){
+      //     // console.log(data[i]);
+      //     if(data[i]===item){
+      //         index = i;
+      //         break;
+      //    }
+      //    }
+      //    console.log(index); // 4
+
+      //    Bydefault method to search element
+      //    console.log(data.indexOf(item)); // 4
+
+      function searchEl() {
+        let data = [1, 23, 43, 54, 65, 45];
+        let item = document.getElementById("item").value;
+        item = parseInt(item);
+        let index = undefined;
+
+        for (let i = 0; i <= data.length - 1; i++) {
+          // console.log(data[i]);
+          if (data[i] === item) {
+            index = i;
+            console.log(index);
+            break;
+          }
+        }
+        // console.log(index);
+      }
+
+      // to reverse array
+      //    let arr = [12,3,4,5,6];
+      //    let reverseArr = arr.reverse();
+      //    console.log(reverseArr);
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter item to search" id="item" />
+    <button onclick="searchEl()">Search Element</button>
+  </body>
+</html>

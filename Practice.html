@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Ds Algo</h1>
+    <input type="number" placeholder="Enter Item to Insert" id="element" />
+    <input
+      type="number"
+      placeholder="Enter Position where to push/Insert Element"
+      id="position"
+    />
+    <button onclick="InsertEl()">Insert Element</button>
     <script>
-        // 1^. palindrom number
-        // 2^. reverse number or string
-        // 3^. prime number 
-        // 4^. Bubble sort
-        // 5^. check strings are anagram 
-        // 6^. FibonacciSeries
-        // 7^. Two sum 
-        
-        // two sum 
-        let data = [7,2,11,3,18,4];
-        
-        for(let i = 0; i < data.length-1; i++){
-            for(let j = 0; j < data.length-1; j++){
-                if(data[j] > data[j+1]){
-                    let temp = data[j];
-                    data[j] = data[j+1];
-                    data[j+1] = temp;
-                }
-            }
+      let arr = [1, 24, 65, 56, 566, 76, 343];
+      let el = parseInt(document.getElementById("element").value);
+      let pos = parseInt(document.getElementById("position").value);
+      // console.log(typeof el);
+      function InsertEl() {
+        for (let i = 0; i < arr.length; i++) {
+          if (i == pos) {
+            arr[pos] = el;
+          }
         }
-        console.log(data);
+        console.log(arr);
+      }
     </script>
-</body>
+  </body>
 </html>
