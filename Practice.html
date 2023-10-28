@@ -5,26 +5,35 @@
   </head>
   <body>
     <h1>Ds Algo</h1>
-    <input type="number" placeholder="Enter Item to Insert" id="element" />
-    <input
-      type="number"
-      placeholder="Enter Position where to push/Insert Element"
-      id="position"
-    />
-    <button onclick="InsertEl()">Insert Element</button>
     <script>
-      let arr = [1, 24, 65, 56, 566, 76, 343];
-      let el = parseInt(document.getElementById("element").value);
-      let pos = parseInt(document.getElementById("position").value);
-      // console.log(typeof el);
-      function InsertEl() {
-        for (let i = 0; i < arr.length; i++) {
-          if (i == pos) {
-            arr[pos] = el;
+      let mainStr = "hello";
+      let subStr = "ll";
+
+      function strStr() {
+        for (let i = 0; i <= mainStr.length; i++) {
+          let match = true;
+          for (let j = 0; j < subStr.length; j++) {
+            if (mainStr[i] !== subStr[j]) {
+              match = false;
+              break;
+            }
           }
+          if (match) return i;
         }
-        console.log(arr);
+        return -1;
       }
+
+      console.log(strStr());
     </script>
   </body>
 </html>
+
+<!-- 
+  1. Machine coding round 
+  2. React revision
+  3. Array and String Questions
+  4. DSA Topics
+  5. code with chai - Backend
+  6. Add login and Sign Up functionality in my E-Commerce Website  
+  7. Create landing page using bootstrap
+-->

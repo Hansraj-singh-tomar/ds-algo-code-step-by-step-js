@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Implement strStr()</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Implement strStr()- Find substring inside string</h1>
     <script>
-        let haystack = "hello";
-        let needle = "ll";
+      let mainStr = "hello";
+      let subStr = "ll";
 
-        // First Method
-        // function strStr(){
-        //     for(let i=0; i <= haystack.length; i++){
-        //         if(needle === haystack.substring(i, i+needle.length)) // 0,2 means 0,1 ke index ki value dekhega agar equal hai needle ke to hame true milega
-        //         {
-        //             // return i;
-        //             return needle.length;  
-        //         }
-        //     }
-        //     return -1
-        // }
-        // console.log(strStr());  // 2
+      // First Method
+      // function strStr(){
+      //     for(let i=0; i <= mainStr.length; i++){
+      //         if(subStr === mainStr.substring(i, i+subStr.length)) // 0,2 means 0,1 ke index ki value dekhega agar equal hai needle ke to hame true milega
+      //         {
+      //             // return i;
+      //             return subStr.length;
+      //         }
+      //     }
+      //     return -1
+      // }
+      // console.log(strStr());  // 2
 
-
-        // Second Method
-        function strStr(){
-            for(let i = 0; i<= haystack.length; i++){
-                let match = true;
-                for(let j = 0; j < needle.length; j++){
-                    if(haystack[i+j] !== needle[j]){
-                        match = false;
-                        break;
-                    }
-                }
-                if(match) return i;
+      // Second Method
+      function strStr() {
+        for (let i = 0; i <= mainStr.length; i++) {
+          let match = true;
+          for (let j = 0; j < subStr.length; j++) {
+            // if (mainStr[i + j] !== subStr[j]) {
+            if (mainStr[i] !== subStr[j]) {
+              match = false;
+              break;
             }
-            return -1;
+          }
+          if (match) return i;
         }
-        console.log(strStr());
-
-
+        return -1;
+      }
+      console.log(strStr());
     </script>
-</body>
+  </body>
 </html>

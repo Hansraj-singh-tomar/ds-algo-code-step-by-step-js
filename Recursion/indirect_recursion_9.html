@@ -12,55 +12,53 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Indirect Recursion.</title>
     <script>
-        let totalApple = 0;
-        
-        // Using Indirect recurtion
-        function buyApple(money){
-            // console.log(x);
-            if(x>0){
-                console.log("I have",totalApple,"Appple",money,"rs. remaining");
-                buyMore(money);
-            } else {
-                console.log("I don't have more money", totalApple);
-            }
+      // Using Indirect recurtion
+      let totalApple = 0;
+      function buyApple(money) {
+        // console.log(x);
+        if (money > 0) {
+          console.log("I have", totalApple, "Appple", money, "rs. remaining");
+          buyMore(money);
+        } else {
+          console.log(
+            "I don't have more money and have " + totalApple + " apple"
+          );
         }
+      }
 
-        function buyMore(money){
-            totalApple++;
-            buyApple(money-20);
-            // console.log("buy more", x);
+      function buyMore(money) {
+        totalApple++;
+        buyApple(money - 20);
+        // console.log("buy more", x);
+      }
+      buyApple(100);
+
+      // Using Direct Recursion
+      // function buyApple(x){
+      //     if(x>0){
+      //         console.log("I have",totalApple,"Appple",x,"rs. remaining");
+      //         totalApple++;
+      //         buyApple(x-10);
+      //     } else {
+      //         console.log("I don't have more money", totalApple);
+      //     }
+      // }
+      // buyApple(money);
+
+      // Logical Question
+      function test(x) {
+        console.log(x); // 5 4 3 2 1 0
+        if (x > 0) {
+          test(x - 1);
         }
-        buyApple(100);
-
-        // Using Direct Recursion
-        // function buyApple(x){
-        //     if(x>0){
-        //         console.log("I have",totalApple,"Appple",x,"rs. remaining");
-        //         totalApple++;
-        //         buyApple(x-10);
-        //     } else {
-        //         console.log("I don't have more money", totalApple);
-        //     }
-        // }
-        // buyApple(money);
-
-        // Logical Question 
-        function test(x){
-            console.log(x); // 5 4 3 2 1 0
-            if(x>0){
-                test(x-1);
-            }
-            console.log(x); // 0 1 2 3 4 5
-        }
-        let data = 5;
-        test(data)
-
+        console.log(x); // 0 1 2 3 4 5
+      }
+      let data = 5;
+      test(data);
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>

@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Check strings are Anagram</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Check strings are Anagram</h1>
     <!-- <script>
         // compare two stings jinke character aage piche hai but character vhi ke vhi hai 
@@ -45,40 +45,40 @@
         console.log(checkAnagram("hello", "elloh"));
     </script> -->
 
-        <script>
-            function strAnagram(str1, str2){
-                let objStr = {};
+    <script>
+      function strAnagram(str1, str2) {
+        let objStr = {};
 
-                if(str1.length !== str2.length){
-                    return false;
-                }
+        if (str1.length !== str2.length) {
+          return false;
+        }
 
-                for(ch of str1) {    
-                    // First way
-                    // if(!objStr[ch]){  // agar character already exist karta hai object me tab uss char ki value ko increase kar do 
-                    //     objStr[ch] = 0;
-                    // }
-                    // objStr[ch]++;
+        for (ch of str1) {
+          // First way
+          // if(!objStr[ch]){  // agar character already exist karta hai object me tab uss char ki value ko increase kar do
+          //     objStr[ch] = 0;
+          // }
+          // objStr[ch]++;
 
-                    // Second way
-                    if(objStr[ch]){  // agar character already exist karta hai object me tab uss char ki value ko increase kar do 
-                        objStr[ch]++;
-                    } else {
-                        objStr[ch] = 1;
-                    }
-                }
-                console.log(objStr);
-                for( ch of str2) {
-                    if(!objStr[ch]){
-                        return false
-                    } else {
-                        objStr[ch]--;
-                    }
-                }
-                return true;
-            }
-            console.log(strAnagram("hello", "lleho"));
-        </script>
-
-</body>
+          // Second way
+          if (objStr[ch]) {
+            // agar character already exist karta hai object me tab uss char ki value ko increase kar do
+            objStr[ch]++;
+          } else {
+            objStr[ch] = 1;
+          }
+        }
+        console.log(objStr);
+        for (ch of str2) {
+          if (!objStr[ch]) {
+            return false;
+          } else {
+            objStr[ch]--;
+          }
+        }
+        return true;
+      }
+      console.log(strAnagram("hello", "lleho"));
+    </script>
+  </body>
 </html>

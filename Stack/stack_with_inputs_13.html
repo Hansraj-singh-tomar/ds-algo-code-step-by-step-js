@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Stack With JavaScript</title>
     <script>
-        let stack = [];
-        let max = 5;
-        let currentSize = stack.length;
-        function push(){
-            let newval = document.getElementById('input').value;
-            newval = parseInt(newval);
+      let stack = [];
+      let currentSize = 0;
+      let max = 5;
 
-            if(currentSize>=max){
-                alert("stack is full you can't add "+newval)
-            }else{
-                stack[currentSize] = newval;
-                currentSize+=1;
-                document.getElementById('input').value="";
-                console.log("element added in stack");
-            }
-        }
+      let stackList = document.getElementById("stackList");
+      const ul = document.createElement("ul");
 
-        function pop(){
-            if(currentSize>0){
-                currentSize-=1;
-                stack.length = currentSize;
-                // console.log(stack);
-            }else{
-                alert("stack is already empty");
-            }
+      let inputBox = document.getElementById("input");
+      function push() {
+        if (currentSize < max) {
+          let newVal = document.getElementById("input").value;
+          if (newVal === "") {
+            alert("Please enter a value in the input box.");
+            return;
+          }
+          stack[currentSize] = newVal;
+          currentSize++;
+          inputBox.value = "";
+        } else {
+          alert(
+            "Stack Is Running Full. If you want to push any element, firstly pop out an element."
+          );
         }
+        inputBox.focus();
+        Display();
+      }
 
-        function display(){
-            for(let i=0;i<=currentSize-1;i++){
-                console.log("el. no", i ,"and value is", data[i]);
-            }
+      function pop() {
+        if (currentSize > 0) {
+          stack.length -= 1;
+          currentSize = currentSize - 1;
+        } else {
+          alert("stack is already empty");
         }
+        inputBox.focus();
+        Display();
+      }
+
+      function Display() {
+        const li = document.createElement("li");
+        stack.map((v, i) => {
+          li.textContent = v;
+        });
+        ul.appendChild(li);
+        stackList.appendChild(ul);
+        inputBox.focus();
+      }
     </script>
-</head>
-<body>
-    <input type="text" id="input">
+  </head>
+  <body>
+    <input type="text" id="input" />
     <button onclick="push()">Add element to Stack</button>
     <button onclick="pop()">Remove element to Stack</button>
     <button onclick="display()">Display All elements of Stack</button>
-</body>
+    <div id="stackList"></div>
+  </body>
 </html>

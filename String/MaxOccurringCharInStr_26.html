@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maximum Occuring Character in string.</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Maximum Occuring Character in string.</h1>
     <!-- <script>
         let str = "hello peter";
@@ -25,22 +25,39 @@
         console.log(strObj);
     </script> -->
     <script>
-        let str = "hello";
-        let strObj = {};
-        let maxKey = "";
+      let str = "hello";
+      let strObj = {};
+      let maxKey = "";
 
-        for(let i = 0; i <= str.length; i++){
-            let key = str[i];
-            if(!strObj[key]){
-                strObj[key] = 0;
-            };
-            strObj[key]++;
-            if(maxKey == "" || strObj[key] > strObj[maxKey])
-            {
-                maxKey = key;
-            }
+      for (let i = 0; i <= str.length; i++) {
+        let key = str[i];
+        if (!strObj[key]) {
+          strObj[key] = 0;
         }
-        console.log(maxKey); // l
+        strObj[key]++;
+        if (maxKey == "" || strObj[key] > strObj[maxKey]) {
+          maxKey = key;
+        }
+      }
+      console.log(maxKey); // l
+
+      //   // 3.  The second and simple approach for it
+      //   let str = "hello";
+      //   let obj = {};
+      //   let max = "";
+      //   for (ch of str) {
+      //     if (obj[ch]) {
+      //       obj[ch]++;
+      //     } else {
+      //       obj[ch] = 1;
+      //     }
+
+      //     if (max == "" || obj[ch] > obj[max]) {
+      //       max = ch;
+      //     }
+      //   }
+      //   console.log(obj);
+      //   console.log(max); // l
     </script>
-</body>
+  </body>
 </html>
