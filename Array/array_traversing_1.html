@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Array Traversing</title>
     <script>
-        let data = [23,3,43,54,64,32,2,34];
-        
-        // Traversing 
-        // for(i=0;i<data.length;i++){
-        //     document.write(`array ${i} is ${data[i]} <br>`)
-        // }
+      let data = [23, 3, 43, 54, 64, 32, 2, 34];
 
-        // Accessing
-        // let x = 5;
-        // document.write(data[x]); // 32
+      // Traversing
+      // for(i=0;i<data.length;i++){
+      //     document.write(`array ${i} is ${data[i]} <br>`)
+      // }
 
-        // getting inputs from user 
-        function getData(){
-            let el = document.getElementById('element').value;
-            if(el<data.length && typeof parseInt(el) === 'number' && el>0){
-                alert(data[el-1]);
-            }else{
-                alert("Please Enter Valid digit");
-            }
+      // Accessing
+      // let x = 5;
+      // document.write(data[x]); // 32
+
+      // getting inputs from user
+      function getData() {
+        let el = document.getElementById("element").value;
+        if (el < data.length && typeof parseInt(el) === "number" && el > 0) {
+          alert(data[el - 1]);
+        } else {
+          alert("Please Enter Valid digit");
         }
-        </script>
-</head>
-<body>
-    <input type="text" id="element">
+      }
+    </script>
+  </head>
+  <body>
+    <input type="number" id="element" placeholder="Enter index of Element" />
     <button onclick="getData()">get data</button>
-</body>
+  </body>
 </html>

@@ -7,8 +7,10 @@
       // let newEl = 70;
       // let position = 2 ;
 
+      // first method
       // data.splice(position, 0, newEl)
 
+      // second method
       // for(let i=data.length-1;i>=0;i--){
       //         // console.log(data[i]);
       //         if(i>=position){
@@ -19,6 +21,19 @@
       //          }
       //  }
       //  document.write(`${data} <br>`);
+
+      // third method
+      // let data = [1, 2, 4, 5];
+      // let newEl = 3;
+      // let pos = 2;
+      // let newArray = [];
+      // for (let i = 0; i < data.length; i++) {
+      //   if (i == pos) {
+      //     newArray.push(newEl);
+      //   }
+      //   newArray.push(data[i]);
+      // }
+      // console.log(newArray); // [1,2,3,4,5]
 
       function insertEl() {
         let newEl = document.getElementById("newEl").value;

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Highlight the words in the string</title>
+  </head>
+  <body>
+    <h1>Highlight the words in the string - From Learnersbucket.com</h1>
+    <script>
+      const str = "Unlimited Javascript  / FrontEnd Guide";
+      const words = ["Front", "End", "Javascript", "Front"];
+      console.log(highLight(str, words));
+
+      function highLight(str, keywords) {
+        const uniqueKeywords = new Set(keywords);
+        // console.log(uniqueKeywords); // Set(3) {'Front', 'End', 'Javascript'}
+
+        const words = str.split(" ");
+        // console.log(words); // ['Unlimited', 'Javascript', '', '/', 'FronteEnd', 'Guide']
+
+        const result = words.map((word) => {
+          let output = "";
+          if (uniqueKeywords.has(word)) {
+            output = `<strong>${word}</strong>`;
+          } else {
+            for (let i = 0; i < word.length; i++) {
+              const prefix = word.slice(0, i + 1);
+              //   console.log(prefix); // U
+              const suffix = word.slice(i + 1);
+              //   console.log(suffix); // nlimited
+
+              if (uniqueKeywords.has(prefix) && uniqueKeywords.has(suffix)) {
+                output = `<strong>${prefix}${suffix}</strong>`;
+              } else if (
+                uniqueKeywords.has(prefix) &&
+                !uniqueKeywords.has(suffix)
+              ) {
+                output = `<strong>${prefix}</strong>${suffix}`;
+              } else if (
+                !uniqueKeywords.has(prefix) &&
+                uniqueKeywords.has(suffix)
+              ) {
+                output = `${prefix}<strong>${suffix}</strong>`;
+              }
+            }
+          }
+          return output !== "" ? output : word;
+        });
+        return result.join(" ");
+      }
+    </script>
+  </body>
+</html>

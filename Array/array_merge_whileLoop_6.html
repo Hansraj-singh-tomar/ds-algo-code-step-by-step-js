@@ -22,19 +22,19 @@
         }
         d3++;
       }
-      if (data1.length > data2.length) {
-        while (d1 < data1.length) {
-          data3[d3] = data1[d1];
-          d1++;
-          //   d3++;
-        }
-      } else {
-        while (d2 < data2.length) {
-          data3[d3] = data2[d2];
-          d2++;
-          //   d3++;
-        }
+
+      while (d1 < data1.length) {
+        data3[d3] = data1[d1];
+        d1++;
+        //   d3++;
       }
+
+      while (d2 < data2.length) {
+        data3[d3] = data2[d2];
+        d2++;
+        //   d3++;
+      }
+
       console.log(data3);
     </script>
   </head>

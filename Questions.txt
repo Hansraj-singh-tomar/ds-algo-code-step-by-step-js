@@ -1,0 +1,82 @@
+---------------------- Array Questions ------------------------
+=> Array Questions(From jsCafe.dev)
+1. Contains Duplicate
+2. Valid Anagram 
+3. Two Sum
+4. Product of array except self 
+5. Maximum Subarray 
+6. Container with most water
+7. Insert Interval
+8. Merge Intervals 
+
+-------------------- String Questions -----------------------
+=> String Questions(From jsCafe.dev)
+1. Remove Duplicates from a String	
+2. Reverse Words in sentence 	
+3. Count Palindromes in string 	
+4. Longest Palindromic Subsequence	
+5. Longest Common Substring	
+6. Longest Common Subsequence	
+7. Minimum Insertions and Deletions	 
+8. Maximum Substring With Max K Distinct Characters	
+9. String Permutations By Changing Case	
+
+// From learnersbucket.com
+1. Highlight the words in the string
+
+
+--------------------- JS Questions -----------------------------
+1. Debouncing/Throtlling
+2. Memoization 
+3. Pollyfills
+4. OOPs concepts
+5. Machine Coding Round
+6. DS/Algo
+7. Array/String Questions
+8. Designing of Website
+
+
+// from work@tech website 
+
+1. cumulative Sum
+2. positive cumulative Sum
+3. identical twins
+4. Even number of digits
+5. implement insertion sort
+6. merge two sorted arrays
+7. merge sorted arrays
+8. implement merge sort 
+9. implement Quick sort 
+10. square sorted array
+11. max consecutive ones
+12. arithmetic sequence 
+13. largest contiguous Sum
+14. pascal's triangle
+15. row column zero
+16. matrix rotation
+17. primes upto N
+18. Merge Overlapping Intervals
+19. Kth largest element
+20. Inversion Count
+
+
+// Implement a function that takes one or more values and returns a function that cycles through those values each time it is called.
+const helloFn = cycle('hello');
+console.log(helloFn()); // "hello"
+console.log(helloFn()); // "hello"
+
+const onOffFn = cycle('on', 'off');
+console.log(onOffFn()); // "on"
+console.log(onOffFn()); // "off"
+console.log(onOffFn()); // "on"
+
+// solution 
+export default function cycle(...values) {
+  let index = 0;
+
+  return () => {
+    const currentValue = values[index];
+    index = (index + 1) % values.length;
+    return currentValue;
+  };
+}

@@ -22,6 +22,10 @@
           if (this.currentSize != this.max) {
             if (this.rear == this.max - 1) {
               this.rear = 0;
+              // to check queue is full or not
+              if (this.rear == this.front) {
+                console.log("Queue is full");
+              }
             } else {
               this.rear++;
             }
@@ -61,6 +65,105 @@
       queue.dequeue();
       queue.dequeue();
       console.log(queue);
+
+      // Second Approach from the Chat GPT
+      // class CircularQueue {
+      //   constructor(size) {
+      //     this.queue = new Array(size);
+      //     this.front = -1;
+      //     this.rear = -1;
+      //     this.size = size;
+      //   }
+
+      //   // Check if the queue is empty
+      //   isEmpty() {
+      //     return this.front === -1 && this.rear === -1;
+      //   }
+
+      //   // Check if the queue is full
+      //   isFull() {
+      //     return (this.rear + 1) % this.size === this.front;
+      //   }
+
+      //   // Enqueue an element
+      //   enqueue(item) {
+      //     // Check if the queue is full
+      //     if (this.isFull()) {
+      //       console.log("Queue is full. Cannot enqueue.");
+      //       return;
+      //     }
+
+      //     // If the queue is empty, set front and rear to 0
+      //     if (this.isEmpty()) {
+      //       this.front = 0;
+      //       this.rear = 0;
+      //     } else {
+      //       // Move the rear pointer circularly
+      //       this.rear = (this.rear + 1) % this.size;
+      //     }
+
+      //     // Enqueue the item
+      //     this.queue[this.rear] = item;
+      //     console.log(`Enqueued ${item}`);
+      //   }
+
+      //   // Dequeue an element
+      //   dequeue() {
+      //     // Check if the queue is empty
+      //     if (this.isEmpty()) {
+      //       console.log("Queue is empty. Cannot dequeue.");
+      //       return;
+      //     }
+
+      //     const dequeuedItem = this.queue[this.front];
+
+      //     // If there's only one element, reset front and rear to -1
+      //     if (this.front === this.rear) {
+      //       this.front = -1;
+      //       this.rear = -1;
+      //     } else {
+      //       // Move the front pointer circularly
+      //       this.front = (this.front + 1) % this.size;
+      //     }
+
+      //     console.log(`Dequeued ${dequeuedItem}`);
+      //     return dequeuedItem;
+      //   }
+
+      //   // Display the elements in the queue
+      //   display() {
+      //     if (this.isEmpty()) {
+      //       console.log("Queue is empty.");
+      //       return;
+      //     }
+
+      //     let current = this.front;
+      //     while (current !== this.rear) {
+      //       console.log(this.queue[current]);
+      //       current = (current + 1) % this.size;
+      //     }
+      //     console.log(this.queue[this.rear]);
+      //   }
+      // }
+
+      // // Example usage
+      // const cq = new CircularQueue(5);
+
+      // cq.enqueue(1);
+      // cq.enqueue(2);
+      // cq.enqueue(3);
+      // cq.enqueue(4);
+      // cq.enqueue(5);
+      // cq.display();
+
+      // cq.dequeue();
+      // cq.dequeue();
+      // // cq.display();
+
+      // // cq.enqueue(4);
+      // // cq.enqueue(5);
+      // cq.enqueue(6); // This will show "Queue is full. Cannot enqueue."
+      // cq.display();
     </script>
   </body>
 </html>

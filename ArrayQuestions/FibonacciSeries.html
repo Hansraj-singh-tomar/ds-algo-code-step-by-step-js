@@ -45,15 +45,38 @@
       // }
       // fibonacci(5);
 
+      // Fourth Way to do it
       // let's do it using recursion
       // sum of fibonacci series
       // fibonacci series is - 0,1,1,2,3,5,8,13,21,34 ans so on...
-      const fib = (n) => {
-        if (n <= 1) return n;
+      // const fib = (n) => {
+      //   if (n <= 1) return n;
 
-        return fib(n - 1) + fib(n - 2);
-      };
-      console.log(fib(3)); // 2
+      //   return fib(n - 1) + fib(n - 2);
+      // };
+      // console.log(fib(3)); // 2
+
+      // Fifth way to do it
+      // fibonacci series using Memoization
+      function fibonacciMemo(n, memoObj = {}) {
+        if (memoObj[n]) {
+          return memoObj[n];
+        }
+        // Base cases
+        if (n === 0) {
+          return 0;
+        } else if (n === 1) {
+          return 1;
+        }
+
+        memoObj[n] = fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo);
+        return memoObj[n];
+      }
+
+      // f(3) => f(2) + f(1)
+      // f(2) => f(1) + f(0)
+      const n = 3;
+      console.log(`Fibonacci(${n}) = ${fibonacciMemo(n)}`); // Fibonacci(5) = 5
     </script>
   </body>
 </html>
