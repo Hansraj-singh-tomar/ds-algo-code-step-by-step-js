@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hight of tree</title>
+</head>
+<body>
+    <h1>High of Tree</h1>
+    <script>    
+        class Node {
+            constructor(val) {
+                this.value = val;
+                this.left = null;
+                this.right = null;
+            }
+        }
+
+        class BSTree {
+            constructor() {
+                this.root = null;
+            }
+
+            isTreeEmpty() {
+                return this.root === null;
+            }
+
+            insertNode(root, newNode) {
+                if (root.value > newNode.value) {
+                // left side of tree 
+                if (root.left === null) {
+                    root.left = newNode
+                } else {
+                    this.insertNode(root.left, newNode)
+                }
+                } else {
+                // right side of tree
+                if (root.right === null) {
+                    root.right = newNode
+                } else {
+                    this.insertNode(root.right, newNode)
+                }
+                }
+            }
+
+            makeTree(val) {
+                let newNode = new Node(val);
+                if (this.isTreeEmpty()) {
+                    this.root = newNode
+                } else {
+                    this.insertNode(this.root, newNode)
+                }
+            }
+
+            getHeight(root) {
+                if (root === null) {
+                    return 0; // Height of an empty tree is 0
+                } else {
+                    // Recursively calculate the height of the left and right subtrees
+                    const leftHeight = this.getHeight(root.left);
+                    const rightHeight = this.getHeight(root.right);
+                    
+                    // Return the maximum height of left and right subtrees plus 1
+                    return Math.max(leftHeight, rightHeight) + 1;
+                }
+            }
+        }
+
+        const tree = new BSTree();
+
+        // console.log(tree);
+        // console.log(tree.isTreeEmpty()); // true
+
+        tree.makeTree(30);
+        tree.makeTree(25);
+        tree.makeTree(35);
+        tree.makeTree(40);
+        tree.makeTree(5);
+        tree.makeTree(22);
+
+        console.log(tree.getHeight(tree.root)); // 4
+        console.log(tree);
+    </script>
+</body>
+</html>

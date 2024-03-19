@@ -9,7 +9,7 @@
 //     let lo = 0;
 //     let hi = arr.length-1;
 //     let temp = 0;
-//     while(mid <= lo){
+//     while(mid <= hi){
 //     if(arr[mid] == 0){
 //         temp = arr[lo];
 //         arr[lo] = arr[mid];
@@ -29,18 +29,18 @@
 // }
 
 // let arr= [0, 1, 1, 2, 1, 2, 0, 0, 1 ];
-      
-// let arr_size = arr.length;
+
+// let arr_size = arr.length;5t
 // console.log(sort012(arr, arr_size));
 
 
 // second method using switch 
 
-function sort012(arr, arr_size){
+function sort012(arr, arr_size) {
     let i, cnt0 = 0, cnt1 = 1, cnt2 = 0;
 
-    for(i = 0; i < arr_size; i++){
-        switch(arr[i]){
+    for (i = 0; i < arr_size; i++) {
+        switch (arr[i]) {
             case 0:
                 cnt0++;
                 break;
@@ -53,19 +53,19 @@ function sort012(arr, arr_size){
         }
     }
 
-    i=0;
+    i = 0;
 
-    while(cnt0 > 0){
+    while (cnt0 > 0) {
         arr[i++] = 0;
         cnt0--;
     }
 
-    while(cnt1 > 0){
+    while (cnt1 > 0) {
         arr[i++] = 1;
         cnt1--;
     }
 
-    while(cnt2 > 0){
+    while (cnt2 > 0) {
         arr[i++] = 2;
         cnt2--;
     }
@@ -73,7 +73,7 @@ function sort012(arr, arr_size){
     return arr;
 }
 
-let arr= [0, 1, 1, 2, 1, 2, 0, 0, 1 ];
-      
+let arr = [0, 1, 1, 2, 1, 2, 0, 0, 1];
+
 let arr_size = arr.length;
 console.log(sort012(arr, arr_size));

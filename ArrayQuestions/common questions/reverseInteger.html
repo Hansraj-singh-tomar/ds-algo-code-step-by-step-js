@@ -22,9 +22,9 @@
             let pop;
             let rev = 0;
             while(num != 0){
-                pop = num % 10;
-                rev = (rev * 10) + pop;
-                num = parseInt(num / 10);
+                pop = num % 10; // 123%10 = 3
+                rev = (rev * 10) + pop; // (0 * 10) + 3 => 3
+                num = parseInt(num / 10); // 123/10 => 12.3 and parseInt(12.3) = 12
             }
             return rev;
         }

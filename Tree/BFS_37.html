@@ -55,6 +55,7 @@
                 let queue = [];
                 queue.push(this.root);
                 while(queue.length){
+                    // remove first element 
                     let current = queue.shift();
                     if(current.left){
                         queue.push(current.left);

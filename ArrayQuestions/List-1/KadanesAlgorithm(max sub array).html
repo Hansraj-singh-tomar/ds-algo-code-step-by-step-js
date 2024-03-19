@@ -41,7 +41,6 @@
                         endInd = j;
                     }
                 }
-
             }
         
             return {
@@ -56,6 +55,26 @@
         console.log(maxSubArray([5,4,-1,7,8])); // {sum: 23, subArray: [5,4,-1,7,8]}
         console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // {sum: 6, subArray: [4,-1,2,1]}
         
+        // using Kadanes algorithm
+        function maxSubArray(arr){
+            let sum = 0;
+            let maxSum = arr[0];
+            
+            for(let i = 1; i < arr.length; i++){
+                sum = sum + arr[i];
+                maxSum = Math.max(sum, maxSum)
+
+                if(sum < 0){
+                    sum = 0;
+                }
+            }
+
+            return maxSum;
+        }
+
+        let arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+        console.log(maxSubArray(arr)); // 6
+
 
         // Second Way 
         // now we will use kadanes algorithm 
@@ -66,10 +85,11 @@
             let endInd = 0;
             
             for(let i=0; i<arr.length; i++){
-                currSum += arr[i]
+                currSum += arr[i];
+
                 // now we will check two conditions in that
                 if(currSum > maxSum){
-                    maxSum = currSum
+                    maxSum = currSum;
                     endInd = i;
                 }
 
@@ -86,7 +106,7 @@
 
             return {
                 sum: maxSum,
-                subArr: arr.slice(startInd, endInd)
+                subArr: arr.slice(startInd+1, endInd+1),
             };
         }
         
@@ -95,17 +115,17 @@
 
     
         // Third Way 
-        // function maxSubArray(nums){
-        //     let sum = nums[0];
+        function maxSubArray(nums){
+            let sum = nums[0];
 
-        //     for(let i=1; i<nums.length;i++){
-        //         nums[i] = Math.max(nums[i], nums[i]+nums[i-1])
-        //         sum = Math.max(sum, nums[i])
-        //     }
+            for(let i=1; i<nums.length;i++){
+                nums[i] = Math.max(nums[i], nums[i]+nums[i-1])
+                sum = Math.max(sum, nums[i])
+            }
 
-        //     return sum
-        // }
-        // console.log(maxSubArray([5,4,-1,7,8])); // 23 // the error was spell mistake of length 
+            return sum
+        }
+        console.log(maxSubArray([5,4,-1,7,8])); // 23 // the error was spell mistake of length 
     
         
         // Fourth Way 

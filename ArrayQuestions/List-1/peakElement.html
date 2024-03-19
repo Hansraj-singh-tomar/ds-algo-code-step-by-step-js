@@ -18,18 +18,18 @@
         //     // console.log(arr[n-2]); //20
 
         //     if(n == 1) return 0; // here 0 is not false that's an a index number
-        //     if(arr[0] >= arr[1]) return 0;
-        //     if(arr[n-1] >= arr[n-2]) return n-1;
+        //     if(arr[0] >= arr[1]) return arr[0];
+        //     if(arr[n-1] >= arr[n-2]) return arr[n-1];
 
         //     for(let i = 0; i < n; i++){
         //         if(arr[i] > arr[i-1] && arr[i] > arr[i+1]){
-        //             return i;
+        //             return arr[i];
         //         }
         //     }
         // }
 
         // let arr = [5,10,20,15]; 
-        // console.log(findPeak(arr, arr.length));  // 2
+        // console.log(findPeak(arr, arr.length));  // 20
         // time complexity is - o(n)
 
 
@@ -53,25 +53,10 @@
         // }
 
         // console.log(findPeak(arr, 0, n-1, n))
-        // // time complexity = o(log N)
+        // // time complexity = O(log N)
 
-        // // Third way to do it
-        // function findPeak(arr, start, end){
-        //     while(start < end){
-        //         let mid = Math.floor((start+end)/2);
-        //         if(arr[mid] > arr[mid+1]){
-        //             end = mid;
-        //         }else{
-        //             start = mid + 1;
-        //         }
-        //     }
-        // } 
-
-        // let arr = [5, 10, 20, 15]
-        // let n = arr.length;
-        // console.log(findPeak(arr, 0, n-1));
-
-    
+        
     </script>
 </body>
 </html>
+

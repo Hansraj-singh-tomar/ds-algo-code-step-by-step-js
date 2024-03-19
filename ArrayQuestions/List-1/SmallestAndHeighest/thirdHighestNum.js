@@ -1,4 +1,4 @@
-// to run this code just write node index.js 
+// to run this code just write node index.js
 
 // function findThirdHighestAndThirdLowest(arr) {
 //     let firstHighest = -Infinity;
@@ -14,7 +14,8 @@
   
 //       // Update firstHighest, secondHighest, and thirdHighest
 //       if (current > firstHighest) {
-//         thirdHighest = secondHighest;
+//         firstly put current value inside firstHeighest
+//         thirdHighest = secondHighest; 
 //         secondHighest = firstHighest;
 //         firstHighest = current;
 //       } else if (current > secondHighest) {

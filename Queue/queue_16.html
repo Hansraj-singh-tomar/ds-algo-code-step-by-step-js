@@ -23,6 +23,8 @@
         function dequeue(){
             if(currentSize>0){
                 for(let i=0; i<queue.length; i++) {
+                    // to remove the first element we can use shift() method inside it 
+                    // queue.shift(); // the first element has been removed 
                     queue[i] = queue[i+1]  // [10,11,12,13]
                     console.log(queue[i]);  
                 }

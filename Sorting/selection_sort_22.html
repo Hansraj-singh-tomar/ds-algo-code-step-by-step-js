@@ -4,26 +4,27 @@
     <title>Selection Sort</title>
     <script>
         let items = [23,1,43,54];
-
-        // In Ascending Order 
+        // In selection sort we sort the largest value at the end 
+        // In Ascending Order - 2,3,4,5,6
         function selectionSort(data){
-            let minId;
+            let minValId;
             for(i=0;i<data.length;i++){
-                minId = i;
+                minValId = i;
                 for(j=i+1; j<data.length; j++){
-                    if(data[j] < data[minId]){
-                        minId = j;
+                    if(data[j] < data[minValId]){
+                        minValId = j;
                     }
                 }
-                let temp = data[minId];
-                data[minId] = data[i];
+                // finding the smallest element and putting it 
+                let temp = data[minValId];
+                data[minValId] = data[i];
                 data[i] = temp; 
             }
         }
         selectionSort(items);
         console.log(items);
 
-        // In Descending Order
+        // In Descending Order - 10, 8, 6, 4, 2 
         // function selectionSort(data){
         //     let maxId;
         //     for(i=0;i<data.length;i++){

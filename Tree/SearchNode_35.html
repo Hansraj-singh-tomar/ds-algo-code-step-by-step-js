@@ -51,13 +51,15 @@
             }
 
             search(root, val){
-                if(root === null){
+                if(root === null){ //root = {root: null}  // here we can't use this.isTreeEmpty() in that case i am not get false 
                     return false;
                 }else if(root.value === val){
                     return true;
                 } else if(root.value > val){
+                    // check left part 
                     return this.search(root.left, val);
                 } else {
+                    // check right part
                     return this.search(root.right, val);
                 }
             }
@@ -66,7 +68,7 @@
                 if(root.left === null){
                     return root.value;
                 }else{
-                    this.minNode(root.left);
+                    return this.minNode(root.left);
                 }
             }
 
@@ -74,7 +76,7 @@
                 if(root.right === null){
                     return root.value;
                 }else{
-                    this.maxNode(root.right);
+                    return this.maxNode(root.right);
                 }
             }
 
@@ -82,6 +84,7 @@
                 let queue = [];
                 queue.push(root)
                 while(queue.length){
+                    // it will remove the first element of an array
                     let current = queue.shift();
                 }
             }

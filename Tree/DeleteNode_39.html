@@ -78,6 +78,7 @@
                 let queue = [];
                 queue.push(this.root);
                 while(queue.length){
+                    // it will remove the first element
                     let current = queue.shift();
                     if(current.left){
                         queue.push(current.left);
@@ -92,14 +93,16 @@
             removeData(value){
                 this.root = this.deleteNode(this.root,value)
             }
-            deleteNode(root,value){
+            deleteNode(root,val){
                 if (root === null) {
                     return null;
                 }
-                if (value < root.value) {
-                    root.left = this.deleteNode(root.left,value)
-                } else if (value > root.value) {
-                    root.right = this.deleteNode(root.right,value)
+                if (val < root.value) {
+                    // root.left = this.deleteNode(root.left,val)
+                    return this.deleteNode(root.left,val)
+                } else if (val > root.value) {
+                    // root.right = this.deleteNode(root.right,val)
+                    return this.deleteNode(root.right,val)
                 } else {
                     if (!root.left && !root.right) {
                         return null;

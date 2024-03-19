@@ -16,7 +16,7 @@
                 return arr;
             }
             let pivot = arr[arr.length - 1];
-            // console.log(pivot);
+            // console.log(pivot); // 9
             let left = [];
             let right = [];
             for (let i = 0; i < arr.length - 1; i++) {
@@ -26,7 +26,8 @@
                     right.push(arr[i]);
                 }
             }
-            return [...left, pivot, ...right];
+            // we are using recursion here
+            return [...quickSort(left), pivot, ...quickSort(right)];
         }
 
         console.log(quickSort(items));
