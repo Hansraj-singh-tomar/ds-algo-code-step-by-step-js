@@ -1,28 +1,9 @@
-function mergeSort(arr) {
-    if (arr.length <= 1) {
-        return arr;
-    }
-    let mid = Math.floor(0 + (arr.length - 0) / 2);
-    let leftArr = arr.slice(0, mid);
-    let rightArr = arr.slice(mid);
-    return merge(mergeSort(leftArr), mergeSort(rightArr))
-}
-
-function merge(leftArr, rightArr) {
+function insertInterval(intervals, newInterval) {
     let result = [];
-    let i = 0;
-    let j = 0;
-    while (i < leftArr.length && j < rightArr.length) {
-        if (leftArr[i] > rightArr[j]) {
-            result.push(rightArr[j]);
-            j++;
-        } else {
-            result.push(leftArr[i]);
-            i++;
-        }
-    }
-    return [...result, ...leftArr.slice(i), ...rightArr.slice(j)]
+
+    for (let interval of intervals)
 }
 
-let arr = [1, 44, 5, 35, 8, 21, 4, 3, 2];
-console.log(mergeSort(arr));
+let intervals = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]];
+let newInterval = [4, 8];
+console.log(insertInterval(intervals, newInterval));

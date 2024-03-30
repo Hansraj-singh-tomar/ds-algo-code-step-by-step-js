@@ -1,5 +1,22 @@
 // Find All Duplicates in an array
 
+// Brute force approach
+// function findDuplicate(arr) {
+//     let result = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[i] == arr[j]) {
+//                 result.push(arr[j])
+//             }
+//         }
+//     }
+//     return result;
+// }
+
+// let arr = [1, 2, 3, 2, 5, 3, 4, 6];
+// console.log(findDuplicate(arr));
+
+
 // 1.
 // let arr = [4,3,2,7,8,2,3,1];
 // let set = new Set();
@@ -32,3 +49,42 @@
 
 // // console.log(arr);
 // console.log(res);  // [2,3]
+
+
+// 3.
+
+// let arr = [4, 3, 2, 7, 8, 2, 3, 11];
+// let obj = {};
+// let res = [];
+
+// for (let elm of arr) {
+//     if (obj[elm]) {
+//         res.push(elm)
+//     }
+//     obj[elm] = elm
+// }
+
+
+// console.log(res);
+
+// ---------------------------------------------------------
+
+// we are finding and removing duplicates from the array
+function findDuplicate(arr) {
+    let result = {};
+    let duplicate = [];
+    for (let elm of arr) {
+        if (result[elm]) {
+            duplicate.push(elm);
+            result[elm]++;
+        } else {
+            result[elm] = 1;
+        }
+    }
+    let uni = Object.keys(result)
+    return { uni, duplicate };
+}
+
+let arr = [2, 3, 4, 3, 5, 2, 6];
+console.log(findDuplicate(arr));
+

@@ -35,7 +35,7 @@ function pairOfArray(arr) {
 
     console.log(map); // {4: [4,4], 5: [5], 6: [6], 7: [7,7], 8: [8], 9: [9]}
 
-    return Object.values(map)
+    return Object.values(map);
 }
 
 let arr = [4, 5, 6, 7, 4, 8, 9, 7];

@@ -1,31 +1,48 @@
 // Array Questions
 Here are 20 DSA (Data Structures and Algorithms) questions related to arrays that are relevant for React.js developers:
 
-1. How can you find the maximum and minimum values in an array?
-2. Explain the concept of a subarray and how you can find the maximum sum of a subarray.
-3. How can you rotate an array by a given number of positions?
-4. Explain the concept of a sliding window technique for arrays.
-5. How can you find the second largest and second smallest elements in an array?
-6. Explain the concept of a prefix sum array and its applications.
-7. How can you find the intersection of two arrays?
-8. How can you rearrange an array such that all even numbers appear before odd numbers?
-9. Explain the concept of a two-pointer approach for solving array problems.
-10. How can you find the majority element in an array?
-11. Explain the concept of a prefix product array and its applications.
-12. How can you find the Kth smallest element in an unsorted array?
-13. Explain the concept of a prefix XOR array and its applications.
-14. How can you find the sum of all subarrays of an array efficiently?
-15. Explain the concept of a prefix count array and its applications.
-16. How can you find the largest subarray with 0 sum?
-17. Explain the concept of a suffix sum array and its applications.
-18. How can you find the smallest missing positive number in an unsorted array?
-19. Explain the concept of a suffix product array and its applications.
-20. How can you find the maximum product subarray in an array?
+// Array Questions
+Basic - 
+    1. Reverse Integer
+    2. Find prime number
+    3. find palindrom number
+    4. fibonacci series
+    5. Union of two arrays
+    6. occurrences of number in array
+    7. find min-max from the array
 
+list - 1
+    1. Chunk and Pair of Array elements
+    2. Move all zero to end/begining of the Array - using Dutch national flag algorithm
+    3. Sort array 0,1,2 format - using Dutch national flag algorithm
+    4. Find Kth highest and smallest element from the array
+    5. Find sub-max array from the array using kadanes Algorithms
+    6. Find Peak element from the array
+    7. write pollyfill to get last element of the array
+    8. Join array by id
+
+list - 2
+    1. Find dublicates elements from the array
+    1. Find the first repeating element in an array of integers
+    1. Remove dublicates from the sorted array
+    2. Two sum
+    2. Count pair with given sum
+    3. Count pair with given sum => arr = [1,5,7,-1], sum = 6 => pairs are - (1,5) (7,-1)
+    4. Find common element from the three arrays
+    5. Find missing element from the array
+    6. rotate array K times 
+    7. Valid paranthesis
+    8. Roman to Integer
+
+list - 3
+    1. 3Sum 
+    2. Euilibrium poin
+    3. LRU_Cache
+    4. sliding window
+    
 
 // String Questions
 Here are 20 DSA (Data Structures and Algorithms) questions related to strings that are relevant for React.js developers:
-
 1. How can you reverse a string in JavaScript?
 2. Explain the concept of an anagram and how you can check if two strings are anagrams.
 3. How can you check if a string is a palindrome?
@@ -46,3 +63,48 @@ Here are 20 DSA (Data Structures and Algorithms) questions related to strings th
 18. Explain the concept of string compression using run-length encoding.
 19. How can you find the longest repeating substring in a string?
 20. Explain the concept of string matching using the Rabin-Karp algorithm.
+
+
+
+// Love Babbar DSA sheet Questions
+✔ Reverse the array
+✔ Find the maximum and minimum element in an array
+✔ Find the "Kth" max and min element of an array 
+✔ Given an array which consists of only 0, 1 and 2. Sort the array without using any sorting algo
+✔ Move all the negative elements to one side of the array 
+✔ Find the Union and Intersection of the two sorted arrays.
+✔ Write a program to cyclically rotate an array by one.
+✔ find Largest sum contiguous Subarray [V. IMP]
+Minimise the maximum difference between heights [V.IMP]
+Minimum no. of Jumps to reach end of an array
+✔ find duplicate in an array of N+1 Integers
+✔ Merge 2 sorted arrays without using Extra space.
+✔ Kadane's Algo [V.V.V.V.V IMP]
+✔ Merge Intervals
+✔ Insert Intervals (not from love babbar)
+Next Permutation
+Count Inversion
+Best time to buy and Sell stock
+✔ find all pairs on integer array whose sum is equal to given number (2Sum)
+✔ find common elements In 3 sorted arrays
+Rearrange the array in alternating positive and negative items with O(1) extra space
+Find if there is any subarray with sum equal to 0
+Find factorial of a large number
+find maximum product subarray 
+Find longest coinsecutive subsequence
+Given an array of size n and a number k, fin all elements that appear more than " n/k " times.
+Maximum profit by buying and selling a share atmost twice
+Find whether an array is a subset of another array
+✔ Find the triplet that sum to a given value (3sum)
+Trapping Rain water problem
+Chocolate Distribution problem
+Smallest Subarray with sum greater than a given value
+Three way partitioning of an array around a given value
+Minimum swaps required bring elements less equal K together
+Minimum no. of operations required to make an array palindrome
+Median of 2 sorted arrays of equal size
+Median of 2 sorted arrays of different size
+✔ (not from love babbar) Equilibrium Point - let arr = [1,2,6,4,0,-1], so the Eq. point is 6 because sum of right side of 6 is 3 and sum of left side is also 3 so 6 is equ. point
+✔ Leader In Array (not from love babbar) 
+✔ Peak element (not from love babbar) 
+✔ Pair of Array element and chunk of array element (not from love babbar) 
