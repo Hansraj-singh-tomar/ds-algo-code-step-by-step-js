@@ -9,7 +9,7 @@ function insertInterval(intervals, newInterval) {
             newInterval = interval
         } else {
             newInterval[0] = Math.min(newInterval[0], interval[0]);
-            newInterval[1] = Math.max(newInterval[1], interval[1])
+            newInterval[1] = Math.max(interval[1], newInterval[1]);
         }
     }
 
@@ -19,5 +19,5 @@ function insertInterval(intervals, newInterval) {
 
 let intervals = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]];
 let newInterval = [4, 8];
-console.log(insertInterval(intervals, newInterval));
+console.log(insertInterval(intervals, newInterval)); // [[1,2], [3, 10], [12, 16]]
 

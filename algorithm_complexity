@@ -1,8 +1,11 @@
-Time Complexity = The time Complexity is mainly calculated by counting the number of 
-steps to finish the execution.
+// Time Complexity = The time Complexity is mainly calculated by counting the number of
+// steps to finish the execution.
 
-Space Complexity = 
-* space Complexity is the amount of space required to solve a problem 
-* space Complexity = Auxiliary space + input size.
+// Space Complexity =
+// * space Complexity is the amount of space required to solve a problem
+// * space Complexity = Auxiliary space + input size.
 
-Big O notation : Use to denote Complexity(both)
+// Big O notation : Use to denote Complexity(both)
+
+
+// O(1) > O(logN) > O(n) > O(nlogN) > O(n^2)

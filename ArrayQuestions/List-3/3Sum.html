@@ -9,17 +9,35 @@
 <body>
     <h1>3 sum problem solution</h1>
     <script>
-        let input = [-1, 0, 1, 2, -1, -4]
-        // let output = [[-1,-1,2],[-1,0,1]]
-        function threeSum(nums){
-            const ans = [];
-            if(nums.length < 3) {
-                return ans;
+        function threeSum(arr, target) {
+            let result = [];
+            for (let i = 0; i < arr.length - 2; i++) {
+                if (i == 0 || (i > 0 && arr[i] !== arr[i - 1])) { // skip duplicates
+                    let j = i + 1;
+                    let k = arr.length - 1;
+
+                    while (j < k) {
+                        let sum = arr[j] + arr[k];
+                        if (sum == -arr[i]) {
+                            result.push([arr[i], arr[j], arr[k]]);
+                            while (j < k && arr[j] == arr[j + 1]) j++; // skip duplicates
+                            while (j < k && arr[k] == arr[k - 1]) k--; // skip duplicates
+                            j++;
+                            k--;
+                        } else if (sum > -arr[i]) {
+                            k--;
+                        } else if (sum < -arr[i]) {
+                            j++;
+                        }
+                    }
+                }
             }
-            // firstly we sort the array
-            nums.sort((a,b) => a-b);
+
+            return result;
         }
-        threeSum(input);
+
+        let arr = [-4, -1, -1, 0, 1, 2];
+        console.log(threeSum(arr, 0));
     </script>
 </body>
 </html>

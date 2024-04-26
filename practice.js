@@ -1,9 +1,23 @@
-function insertInterval(intervals, newInterval) {
-    let result = [];
+function findDuplicates(str) {
+    let charCount = {}
 
-    for (let interval of intervals)
+    for (let ch of str) {
+        if (charCount[ch]) {
+            charCount[ch]++;
+        } else {
+            charCount[ch] = 1;
+        }
+    }
+
+    const duplicates = [];
+
+    for (let ch in charCount) {
+        if (charCount[ch] > 1) {
+            duplicates.push(ch)
+        }
+    }
+
+    return duplicates;
 }
 
-let intervals = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]];
-let newInterval = [4, 8];
-console.log(insertInterval(intervals, newInterval));
+console.log(findDuplicates("leetcode"));
