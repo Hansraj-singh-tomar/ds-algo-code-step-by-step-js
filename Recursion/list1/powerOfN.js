@@ -1,3 +1,4 @@
+// 1. first approach - from love babbar
 // if power of a^b then,
 // 1. b is even -> a^1/2 * a^1/2
 // 2. b is odd -> a * a^1/2 * a^1/2 
@@ -25,3 +26,15 @@ function powerOfN(a, power) {
 }
 
 console.log(powerOfN(2, 10));
+
+
+// 2. second approach
+// function powerOfN(n) {
+//     if (n == 0) {
+//         return 1
+//     }
+
+//     return 2 * powerOfN(n - 1)
+// }
+
+// console.log(powerOfN(5));

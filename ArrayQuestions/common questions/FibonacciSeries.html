@@ -20,19 +20,29 @@
       // }
       // console.log(fibonacciSeries(10)); // output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 
+
+// -----------------------------------------------------------------
+
+
       // Second Way to do it
-      // const num = 10;
+      // const num = 20;
       // let x = 0;
       // let y = 1;
       // let fn = x + y;
-      // console.log(x);
-      // while(fn < num){
-      //     console.log(fn);
+      // let series = []
+      // series.push(x);
+      // while (fn < num) {
+      //     series.push(fn);
       //     fn = x + y;
       //     x = y;
       //     y = fn;
       // }
+      // console.log(series);
       // output - [0,1,1,2,3,5....]
+
+
+// -----------------------------------------------------------------
+
 
       // Third way to do it
       // const fibonacci = (n) => {
@@ -45,6 +55,8 @@
       // }
       // fibonacci(5);
 
+// -----------------------------------------------------------------
+
       // Fourth Way to do it
       // let's do it using recursion
       // sum of fibonacci series
@@ -55,6 +67,8 @@
       //   return fib(n - 1) + fib(n - 2);
       // };
       // console.log(fib(3)); // 2
+
+// -----------------------------------------------------------------
 
       // Fifth way to do it
       // fibonacci series using Memoization
@@ -69,7 +83,7 @@
           return 1;
         }
 
-        memoObj[n] = fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo);
+        memoObj[n] = fibonacciMemo(n - 1, memoObj) + fibonacciMemo(n - 2, memoObj);
         return memoObj[n];
       }
 
