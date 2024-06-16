@@ -21,9 +21,8 @@ console.log("The missing number is:", missingNumber);
 
 
 // Second Method
-
-var arr = [1, 2, 3, 5];
-var count = arr.length + 1;
+var arr = [1, 2, 3, 5, 12];
+var count = [arr.length - 1];
 var missing = new Array();
 
 for (var i = 1; i <= count; i++) {
@@ -31,7 +30,7 @@ for (var i = 1; i <= count; i++) {
     missing.push(i);
   }
 }
-console.log(missing);
+console.log(missing); //  [4, 6, 7, 8, 9, 10, 11]
 
 
 // 3. Not usable

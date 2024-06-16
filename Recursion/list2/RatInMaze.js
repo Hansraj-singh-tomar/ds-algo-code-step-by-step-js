@@ -40,6 +40,7 @@ function solveMaze(maze, x, y, n, path, paths, visited) {
         solveMaze(maze, newX, newY, n, path, paths, visited);
         path.pop();
     }
+
     // move - left
     newX = x;
     newY = y - 1;

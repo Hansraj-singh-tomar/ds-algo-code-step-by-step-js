@@ -24,4 +24,5 @@ function searchElm(arr, start, end, target) {
 let arr = [4, 6, 8, 10, 1, 2]; // 4
 // let arr = [2, 1]; // 1
 // let arr = [1, 2, 3, 4, 5]; // 0
-console.log(searchElm(arr, 0, arr.length - 1, 1)); 
+console.log(searchElm(arr, 0, arr.length - 1, 1));
+
