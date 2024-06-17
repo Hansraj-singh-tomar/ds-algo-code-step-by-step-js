@@ -3,7 +3,7 @@ function sqrt(target) {
     let end = target;
     let ans;
 
-    if (x < 2) return x;
+    if (target < 2) return target;
 
     while (start <= end) {
         let mid = Math.floor(start + (end - start) / 2)
