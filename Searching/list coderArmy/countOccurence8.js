@@ -2,7 +2,7 @@ function countOfOccurrence(arr, target, start, end) {
     let firstIndex = -1;
     let lastIndex = -1;
 
-    // first element
+    // first element - right side 
     while (start <= end) {
         let mid = Math.floor((start + end) / 2);
 
@@ -16,7 +16,7 @@ function countOfOccurrence(arr, target, start, end) {
         }
     }
 
-    // last element
+    // last element - left side 
     start = 0;
     end = arr.length - 1;
     while (start <= end) {

@@ -17,6 +17,8 @@
 
         // // first way 
         // // using Brute force approach
+        // // Time complexity for this is O(n^2)
+        // // Space Complexity for this is O(1) because we are not creating new array we just returing value from the function. 
         
         function maxSubArray(nums){
             let maxSum = 0;
@@ -49,12 +51,12 @@
             }
         }
 
-        // // Time complexity for this is O(n^2)
-        // // Space Complexity for this is O(1) because we are not creating new array we just returing value from the function. 
         
         console.log(maxSubArray([5,4,-1,7,8])); // {sum: 23, subArray: [5,4,-1,7,8]}
         console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // {sum: 6, subArray: [4,-1,2,1]}
         
+// ------------------------------------------------------------------------------------------------------------
+
         // using Kadanes algorithm
         function maxSubArray(arr){
             let sum = 0;
@@ -75,6 +77,7 @@
         let arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
         console.log(maxSubArray(arr)); // 6
 
+// -----------------------------------------------------------------------------------
 
         // Second Way 
         // now we will use kadanes algorithm 
@@ -113,6 +116,7 @@
         // console.log(maxSubArray([5,4,-1,7,8])); // { sum: 23, subArr: [ 5, 4, -1, 7, 8 ] }
         // console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // { sum: 6, subArr: [ -3, 4, -1, 2, 1 ] }
 
+// ----------------------------------------------------------------------------------------------------------------------------------
     
         // Third Way 
         function maxSubArray(nums){
@@ -127,6 +131,7 @@
         }
         console.log(maxSubArray([5,4,-1,7,8])); // 23 // the error was spell mistake of length 
     
+// -----------------------------------------------------------------------------------------------------------------------
         
         // Fourth Way 
         // Time Complexity - O(n), because we are using only one for loop

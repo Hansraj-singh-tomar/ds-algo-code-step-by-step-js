@@ -18,7 +18,7 @@ const numbers = [1, 2, 4, 5, 6];
 const missingNumber = findMissingNumber(numbers);
 console.log("The missing number is:", missingNumber);
 
-
+// -----------------------------------------------------------------------------
 
 // Second Method
 var arr = [1, 2, 3, 5, 12];

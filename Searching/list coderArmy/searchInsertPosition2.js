@@ -12,7 +12,7 @@ function abc(arr, target) {
             return mid
         } else if (arr[mid] < target) {
             start = mid + 1;
-        } else {
+        } else { // arr[mid] > target
             ans = mid;
             end = mid - 1;
         }

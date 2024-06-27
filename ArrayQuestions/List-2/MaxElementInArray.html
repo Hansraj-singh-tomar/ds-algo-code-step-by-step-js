@@ -7,7 +7,7 @@
     <title>Find Leader In The Array</title>
 </head>
 <body>
-    <h1>Find Leader In the Array</h1>
+    <h1>Find Max Elm In the Array</h1>
     <script>
 
         // 1.
@@ -23,19 +23,6 @@
         // }
         // console.log(Leader(array)); // 35
 
-        // 2.
-        function findLeaders(arr) {
-            let max = arr[arr.length - 1];
-            const leaders = [max];
-            for (let i = arr.length - 2; i >= 0; i--) {
-                if (arr[i] > max) {
-                max = arr[i];
-                leaders.push(max);
-                }
-            } 
-            return leaders.reverse();
-        }
-        console.log(findLeaders([2,35,5,10,4]));  // [35, 10, 4]
 
 
     </script>

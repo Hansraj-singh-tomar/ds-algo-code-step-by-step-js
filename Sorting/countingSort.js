@@ -11,7 +11,8 @@ function countingSort(arr, max) {
 
     console.log(counts); // [0, 1, 2, 2, 1, 0, 0, 0, 1]
 
-    for (let i = 0; i < counts.length; i++) {
+    for (let i = 0; i < max; i++) {
+        // for (let i = 0; i < max; i++) {
         while (counts[i] > 0) {
             sortedArray.push(i);
             counts[i]--;

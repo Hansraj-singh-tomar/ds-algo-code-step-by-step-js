@@ -155,3 +155,15 @@ Transform One String to Another using Minimum Number of Given Operation
 Check if two given strings are isomorphic to each other
 Recursively print all sentences that can be formed from list of word lists
 
+// ----------------------- Kadene's Algorithm ---------------------------------------------------------
+// 1. Max sub array - Largest sum contiguous subarray
+// 2. Max Difference between two element - kisi element ka apne aage vale se difference kitna hai
+// 3. Two equal sub array
+// 4. Trapping Rain water
+
+// ----------------------- Two Pointers ------------------------------------------------------
+// 1. Count pair with given sum 
+// 2. Segragate 0 and 1
+// 3. pair with given difference
+// 4. Two Sum
+// 3. 3 Sum, 4 Sum
