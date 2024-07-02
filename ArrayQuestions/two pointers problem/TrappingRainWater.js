@@ -83,7 +83,7 @@ console.log(trappingRainWater(height, height.length)); // 10
 // Using Two pointers approach
 // Time complexity - O(n)
 // space complexity - O(1)
-// in that we are iterating array at only, that the difference
+// in that we are iterating array at only, that's the difference
 
 function trappingRainWater(arr, n) {
     let left = 0;

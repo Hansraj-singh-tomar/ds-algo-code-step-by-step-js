@@ -120,8 +120,8 @@ Write a Program to check whether a string is a valid shuffle of two strings or n
 Count and Say problem
 Write a program to find the longest Palindrome in a string.[Longest palindromic Substring]
 Find Longest Recurring Subsequence in String
-Print all Subsequences of a string.
-✔ Print all the permutations of the given string
+✔ recursion - Print all Subsequences of a string.
+✔ recursion - Print all the permutations of the given string
 Split the Binary string into two substring with equal 0’s and 1’s
 Word Wrap Problem [VERY IMP].
 EDIT Distance [Very Imp]
@@ -143,7 +143,7 @@ Find the first repeated word in string.
 Minimum number of swaps for bracket balancing.
 Find the longest common subsequence between two strings.
 Program to generate all possible valid IP addresses from given  string.
-Write a program to find the smallest window that contains all characters of string itself.
+✔ Write a program to find the smallest window that contains all characters of string itself.
 Rearrange characters in a string such that no two adjacent are same
 Minimum characters to be added at front to make string palindrome
 Given a sequence of words, print all anagrams together
