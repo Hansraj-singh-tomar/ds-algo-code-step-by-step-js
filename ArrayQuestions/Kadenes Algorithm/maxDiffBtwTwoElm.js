@@ -57,4 +57,4 @@ function maxDifference(arr, n) {
 }
 
 let arr = [9, 5, 8, 12, 2, 3, 7, 4];
-console.log(maxDifference(arr, arr.length)); // 7
+console.log(maxDifference(arr, arr.length)); // 7 // 12 - 5 = 7

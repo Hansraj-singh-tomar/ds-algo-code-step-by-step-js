@@ -28,6 +28,6 @@ function check(str) {
 }
 
 let str = "levelA"
-console.log(check(str)); // 5
+console.log(check(str)); // 5 // level
 
 // 'A' === 'a' => false 

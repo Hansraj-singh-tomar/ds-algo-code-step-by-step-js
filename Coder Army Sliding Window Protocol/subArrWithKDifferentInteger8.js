@@ -46,7 +46,7 @@ function GoodSubArr(arr, k) {
             delete map[key];
         }
     }
-    // console.log(map); // map = {};
+    console.log(map); // map = {};
     k++;
 
     while (end < n) {
